@@ -99,6 +99,46 @@ npm run build
 
 ---
 
+## 🪄 Magic Mode (Zero-Code)
+
+Want to pixelate your site without writing classes? Include our **Magic Script** and add `data-pixelart="true"` to your `<body>` or any container:
+
+```html
+<!-- 1. Add the attribute -->
+<body data-pixelart="true">
+
+  <!-- 2. Standard HTML automatically transforms into Pixel Art! -->
+  <button>Click Me</button>
+  <progress value="50" max="100"></progress>
+  <h1>Title</h1>
+  <input type="text" placeholder="Type...">
+  
+  <!-- 3. Include the magic script -->
+  <script src="https://raw.githubusercontent.com/blackmoon87/pixelart.css/main/js/pixelart-magic.js"></script>
+</body>
+```
+
+---
+
+## 🎨 Theming & Customization
+
+You can easily customize the core colors and borders of the framework by overriding CSS Custom Properties (`:root` variables) in your own stylesheet:
+
+```css
+:root {
+  /* Change the default frame shadow colors */
+  --px-frame-shadow: #111111;
+  --px-frame-mid:    #333333;
+  --px-frame-dark:   #222222;
+  --px-frame-light:  #555555;
+
+  /* Change the primary neon color */
+  --px-neon-cyan:    #ff00ff; /* Make neon cyan actually magenta */
+}
+```
+
+---
+
 ## Build
 
 ```bash

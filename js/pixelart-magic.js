@@ -1,0 +1,86 @@
+/**
+ * PIXELART.CSS — Magic Integration Script
+ * 
+ * Automatically applies pixelart-css classes to standard HTML elements
+ * when the body or a container has the `data-pixelart="true"` attribute.
+ * Zero-code required for site owners!
+ */
+
+(function() {
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // Check if magic mode is enabled globally or locally
+    const magicContainers = document.querySelectorAll('[data-pixelart="true"]');
+    
+    if (magicContainers.length === 0) return; // Magic mode not active
+
+    console.log('[PixelArt CSS] 🪄 Magic mode activated. Transforming elements...');
+
+    const mappings = [
+      // Buttons -> .px-btn .px-btn-primary .px-press
+      {
+        selector: 'button:not([class*="px-btn"]), input[type="submit"]:not([class*="px-btn"]), input[type="button"]:not([class*="px-btn"])',
+        classes: ['px-btn', 'px-btn-primary', 'px-press']
+      },
+      // Progress bars -> .px-progress
+      {
+        selector: 'progress:not([class*="px-progress"])',
+        classes: ['px-progress']
+      },
+      // Headings -> .px-text-shadow
+      {
+        selector: 'h1:not([class*="px-text"]), h2:not([class*="px-text"]), h3:not([class*="px-text"])',
+        classes: ['px-text-shadow']
+      },
+      // HR -> .px-divider
+      {
+        selector: 'hr:not([class*="px-divider"])',
+        classes: ['px-divider']
+      },
+      // Tables -> .px-border
+      {
+        selector: 'table:not([class*="px-border"])',
+        classes: ['px-border']
+      },
+      // Inputs -> .px-input
+      {
+        selector: 'input[type="text"]:not([class*="px-"]), input[type="password"]:not([class*="px-"]), input[type="email"]:not([class*="px-"]), textarea:not([class*="px-"])',
+        classes: ['px-input']
+      },
+      // Select -> .px-select
+      {
+        selector: 'select:not([class*="px-select"])',
+        classes: ['px-select']
+      },
+      // Checkbox -> .px-checkbox
+      {
+        selector: 'input[type="checkbox"]:not([class*="px-checkbox"])',
+        classes: ['px-checkbox']
+      },
+      // "card" class -> .px-card
+      {
+        selector: '.card:not([class*="px-card"])',
+        classes: ['px-card']
+      },
+      // "window" class -> .px-window
+      {
+        selector: '.window:not([class*="px-window"])',
+        classes: ['px-window']
+      }
+    ];
+
+    // Apply mappings to each container
+    magicContainers.forEach(container => {
+      // Force pixelated rendering on container
+      container.style.imageRendering = 'pixelated';
+      
+      mappings.forEach(mapping => {
+        const elements = container.querySelectorAll(mapping.selector);
+        elements.forEach(el => {
+          el.classList.add(...mapping.classes);
+        });
+      });
+    });
+
+  });
+})();

@@ -650,3 +650,84 @@
   border: 3px dashed var(--px-neon-cyan);
   border-radius: 0;
 }
+
+/* ═══════════════════════════════════════════════
+   PIXEL FORMS (INPUTS, CHECKBOX, SELECT)
+   ═══════════════════════════════════════════════ */
+
+.px-input {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--px-near-black);
+  color: var(--px-light-silver);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow: inset 4px 4px 0 0 var(--px-black);
+  border-radius: 0;
+  outline: none;
+  transition: none;
+}
+.px-input:focus {
+  border-color: var(--px-neon-cyan);
+  box-shadow: inset 4px 4px 0 0 var(--px-black), 0 0 0 2px var(--px-neon-cyan);
+}
+.px-input::placeholder {
+  color: var(--px-mid-gray);
+}
+
+.px-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--px-dark-gray);
+  color: var(--px-light-silver);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  padding: 12px 32px 12px 12px;
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow: inset 2px 2px 0 0 var(--px-frame-light), inset -2px -2px 0 0 var(--px-frame-dark);
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  /* Pixel arrow */
+  background-image: linear-gradient(45deg, transparent 50%, var(--px-light-silver) 50%),
+                    linear-gradient(135deg, var(--px-light-silver) 50%, transparent 50%);
+  background-position: calc(100% - 16px) calc(50% + 2px), calc(100% - 10px) calc(50% + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+.px-select:focus {
+  border-color: var(--px-neon-cyan);
+}
+
+.px-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--px-near-black);
+  border: 3px solid var(--px-frame-shadow);
+  box-shadow: inset 2px 2px 0 0 var(--px-black);
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  outline: none;
+  margin-right: 8px;
+}
+.px-checkbox:checked {
+  background: var(--px-neon-cyan);
+  border-color: var(--px-neon-cyan);
+  box-shadow: inset 2px 2px 0 0 rgba(0, 0, 0, 0.3);
+}
+.px-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--px-black);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
