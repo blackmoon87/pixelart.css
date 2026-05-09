@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>pixelart-css — Usage Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/pixelart.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0d0d0d;color:#fcfcfc;font-family:'Share Tech Mono',monospace;padding:32px;line-height:1.8}
+    h1{font-family:'Press Start 2P',monospace;font-size:18px;color:#00f5ff;text-shadow:0 0 12px #00f5ff,4px 4px 0 #bf00ff;margin-bottom:8px}
+    h2{font-family:'Press Start 2P',monospace;font-size:10px;color:#ffe600;margin:48px 0 16px;border-bottom:2px solid #2d2d44;padding-bottom:8px}
+    .subtitle{font-family:'VT323',monospace;font-size:22px;color:#9090b0;margin-bottom:40px}
+    .install-box{background:#1a1a2e;border:2px solid #00f5ff;padding:16px 24px;margin-bottom:40px;font-size:14px}
+    .install-box span{color:#39ff14}
+    .demo-row{display:flex;flex-wrap:wrap;gap:24px;margin-bottom:16px;align-items:flex-start}
+    .demo-col{flex:1;min-width:260px}
+    pre{background:#111;border:2px solid #2d2d44;padding:12px;font-size:11px;color:#9090b0;overflow-x:auto;margin-top:8px;white-space:pre-wrap}
+    .label{font-size:11px;color:#6b6b8e;display:block;margin-bottom:6px}
+    .spacer{height:24px}
+    .gap{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    section{margin-bottom:56px}
+  </style>
+</head>
+<body>
+
+<h1>PIXELART-CSS</h1>
+<p class="subtitle">► npm install @blue87moon/pixelart-css ◄</p>
+
+<div class="install-box">
+  <span>// CDN</span><br>
+  &lt;link rel="stylesheet" href="https://raw.githubusercontent.com/blackmoon87/pixelart.css/main/css/pixelart.min.css"&gt;<br><br>
+  <span>// npm</span><br>
+  npm install @blue87moon/pixelart-css
+</div>
+
+<!-- 01 FRAMES -->
+<h2>// 01. FRAMES</h2>
+<div class="demo-row">
+  <div class="demo-col">
+    <span class="label">px-frame</span>
+    <div class="px-frame" style="padding:16px;background:#111">Standard 3D raised frame</div>
+    <pre>&lt;div class="px-frame"&gt;...&lt;/div&gt;</pre>
+  </div>
+  <div class="demo-col">
+    <span class="label">px-frame-neon</span>
+    <div class="px-frame-neon" style="padding:16px;background:#0d0d1a;color:#00f5ff">Synthwave neon glow</div>
+    <pre>&lt;div class="px-frame-neon"&gt;...&lt;/div&gt;</pre>
+  </div>
+  <div class="demo-col">
+    <span class="label">px-frame-gb</span>
+    <div class="px-frame-gb" style="padding:16px;font-family:'Press Start 2P',monospace;font-size:8px;color:#0f380f">GAME BOY</div>
+    <pre>&lt;div class="px-frame-gb"&gt;...&lt;/div&gt;</pre>
+  </div>
+  <div class="demo-col">
+    <span class="label">px-frame-inset</span>
+    <div class="px-frame-inset" style="padding:16px;background:#2d2d44;color:#9090b0">Sunken / pressed</div>
+    <pre>&lt;div class="px-frame-inset"&gt;...&lt;/div&gt;</pre>
+  </div>
+</div>
+
+<!-- 02 WINDOW -->
+<h2>// 02. PIXEL WINDOW</h2>
+<div style="max-width:340px">
+  <div class="px-window">
+    <div class="px-window-title">
+      <span>PROGRAM.EXE</span>
+      <span>
+        <span class="px-window-btn">_</span>
+        <span class="px-window-btn">□</span>
+        <span class="px-window-btn" style="color:#d82800">✕</span>
+      </span>
+    </div>
+    <div class="px-window-body" style="padding:16px;background:#1a1a2e">
+      <p style="font-size:12px;color:#9090b0">Window body content here.</p>
+      <div class="spacer"></div>
+      <button class="px-btn px-btn-primary px-press" style="font-size:8px">OK</button>
+    </div>
+  </div>
+  <pre>&lt;div class="px-window"&gt;
+  &lt;div class="px-window-title"&gt;
+    &lt;span&gt;TITLE&lt;/span&gt;
+    &lt;span&gt;
+      &lt;span class="px-window-btn"&gt;_&lt;/span&gt;
+      &lt;span class="px-window-btn"&gt;□&lt;/span&gt;
+      &lt;span class="px-window-btn"&gt;✕&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="px-window-body"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+</div>
+
+<!-- 03 BUTTONS -->
+<h2>// 03. BUTTONS</h2>
+<div class="gap">
+  <button class="px-btn px-btn-primary px-press">PRIMARY</button>
+  <button class="px-btn px-btn-danger px-press">DANGER</button>
+  <button class="px-btn px-btn-success px-press">SUCCESS</button>
+  <button class="px-btn px-btn-gold px-press">GOLD</button>
+  <button class="px-btn px-btn-neon px-glow">NEON</button>
+  <button class="px-btn px-btn-gb px-press">GAME BOY</button>
+</div>
+<pre>&lt;button class="px-btn px-btn-primary px-press"&gt;PRIMARY&lt;/button&gt;
+&lt;button class="px-btn px-btn-danger px-press"&gt;DANGER&lt;/button&gt;
+&lt;button class="px-btn px-btn-success px-press"&gt;SUCCESS&lt;/button&gt;
+&lt;button class="px-btn px-btn-gold px-press"&gt;GOLD&lt;/button&gt;
+&lt;button class="px-btn px-btn-neon px-glow"&gt;NEON&lt;/button&gt;
+&lt;button class="px-btn px-btn-gb px-press"&gt;GAME BOY&lt;/button&gt;</pre>
+
+<!-- 04 BADGES -->
+<h2>// 04. BADGES</h2>
+<div class="gap">
+  <span class="px-badge" style="color:#00f5ff;background:#1a1a2e">NEON</span>
+  <span class="px-badge" style="color:#ff2d78;background:#1a1a2e">HOT</span>
+  <span class="px-badge" style="color:#ffe600;background:#1a1a2e">GOLD</span>
+  <span class="px-badge" style="color:#39ff14;background:#1a1a2e">LIVE</span>
+  <span class="px-badge px-blink" style="color:#ff2d78;background:#1a1a2e">● REC</span>
+</div>
+<pre>&lt;span class="px-badge" style="color:#00f5ff;background:#1a1a2e"&gt;NEON&lt;/span&gt;
+&lt;span class="px-badge px-blink" style="color:#ff2d78"&gt;● REC&lt;/span&gt;</pre>
+
+<!-- 05 PROGRESS -->
+<h2>// 05. PROGRESS BARS</h2>
+<div style="max-width:480px;display:flex;flex-direction:column;gap:12px">
+  <div><span class="label">HP — Green (default)</span>
+    <progress class="px-progress" value="75" max="100"></progress></div>
+  <div><span class="label">MP — Blue</span>
+    <progress class="px-progress px-progress-fill-blue" value="45" max="100"></progress></div>
+  <div><span class="label">DANGER — Red</span>
+    <progress class="px-progress px-progress-fill-red" value="15" max="100"></progress></div>
+</div>
+<pre>&lt;progress class="px-progress" value="75" max="100"&gt;&lt;/progress&gt;
+&lt;progress class="px-progress px-progress-fill-blue" value="45" max="100"&gt;&lt;/progress&gt;
+&lt;progress class="px-progress px-progress-fill-red" value="15" max="100"&gt;&lt;/progress&gt;</pre>
+
+<!-- 06 SHADOWS -->
+<h2>// 06. PIXEL SHADOWS</h2>
+<div class="gap" style="flex-wrap:wrap">
+  <div class="px-shadow-1" style="background:#2d2d44;padding:16px;font-size:8px">OUTLINE</div>
+  <div class="px-shadow-4" style="background:#0000fc;color:#fff;padding:16px;font-size:8px">3D NES</div>
+  <div class="px-shadow-5" style="background:#d82800;color:#fff;padding:16px;font-size:8px">DEEP</div>
+  <div class="px-shadow-6" style="background:#1a1a2e;color:#00f5ff;padding:16px;font-size:8px">NEON GLOW</div>
+  <div class="px-shadow-7" style="background:#2d2d44;padding:16px;font-size:8px">WINDOW</div>
+</div>
+<pre>&lt;div class="px-shadow-1"&gt;outline&lt;/div&gt;
+&lt;div class="px-shadow-4"&gt;3D NES raise&lt;/div&gt;
+&lt;div class="px-shadow-5"&gt;deep drop&lt;/div&gt;
+&lt;div class="px-shadow-6"&gt;neon glow&lt;/div&gt;
+&lt;div class="px-shadow-7"&gt;double border&lt;/div&gt;</pre>
+
+<!-- 07 TEXT EFFECTS -->
+<h2>// 07. TEXT EFFECTS</h2>
+<div style="display:flex;flex-direction:column;gap:16px">
+  <div><span class="label">px-text-shadow</span>
+    <p class="px-text-shadow" style="font-size:16px;color:#fcfcfc">HARD SHADOW</p></div>
+  <div><span class="label">px-text-shadow-neon</span>
+    <p class="px-text-shadow-neon" style="font-size:16px;color:#00f5ff">NEON GLOW</p></div>
+  <div><span class="label">px-text-outline</span>
+    <p class="px-text-outline" style="font-size:16px;color:#ffe600">OUTLINED</p></div>
+  <div><span class="label">px-text-rainbow</span>
+    <p class="px-text-rainbow" style="font-size:16px">RAINBOW</p></div>
+</div>
+<pre>&lt;p class="px-text-shadow"&gt;HARD SHADOW&lt;/p&gt;
+&lt;p class="px-text-shadow-neon" style="color:#00f5ff"&gt;NEON GLOW&lt;/p&gt;
+&lt;p class="px-text-outline" style="color:#ffe600"&gt;OUTLINED&lt;/p&gt;
+&lt;p class="px-text-rainbow"&gt;RAINBOW&lt;/p&gt;</pre>
+
+<!-- 08 BACKGROUNDS -->
+<h2>// 08. PIXEL BACKGROUNDS</h2>
+<div class="demo-row">
+  <div class="demo-col">
+    <span class="label">px-bg-grid</span>
+    <div class="px-bg-grid px-frame" style="height:72px;background-color:#0d0d0d"></div>
+    <pre>&lt;div class="px-bg-grid"&gt;&lt;/div&gt;</pre>
+  </div>
+  <div class="demo-col">
+    <span class="label">px-bg-checker</span>
+    <div class="px-bg-checker px-frame" style="height:72px;background-color:#2d2d44"></div>
+    <pre>&lt;div class="px-bg-checker"&gt;&lt;/div&gt;</pre>
+  </div>
+  <div class="demo-col">
+    <span class="label">px-bg-stars</span>
+    <div class="px-bg-stars px-frame" style="height:72px"></div>
+    <pre>&lt;div class="px-bg-stars"&gt;&lt;/div&gt;</pre>
+  </div>
+</div>
+
+<!-- 09 ANIMATIONS -->
+<h2>// 09. ANIMATIONS</h2>
+<div class="gap" style="align-items:flex-end">
+  <div style="text-align:center">
+    <div class="px-anim-float px-frame" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#111;font-size:20px">👾</div>
+    <span class="label" style="margin-top:6px">px-anim-float</span>
+  </div>
+  <div style="text-align:center">
+    <div class="px-anim-spin px-frame" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:#0000fc;font-size:20px">⭐</div>
+    <span class="label" style="margin-top:6px">px-anim-spin</span>
+  </div>
+  <div style="text-align:center">
+    <span class="px-blink" style="font-size:28px;color:#ff2d78">♥</span>
+    <span class="label" style="display:block;margin-top:6px">px-blink</span>
+  </div>
+  <div style="text-align:center">
+    <button class="px-btn px-btn-danger px-shake" style="font-size:8px">SHAKE ME</button>
+    <span class="label" style="display:block;margin-top:6px">px-shake (hover)</span>
+  </div>
+  <div style="text-align:center">
+    <button class="px-btn px-btn-gold px-bounce" style="font-size:8px">JUMP</button>
+    <span class="label" style="display:block;margin-top:6px">px-bounce (hover)</span>
+  </div>
+</div>
+<pre>&lt;div class="px-anim-float"&gt;👾&lt;/div&gt;
+&lt;div class="px-anim-spin"&gt;⭐&lt;/div&gt;
+&lt;span class="px-blink"&gt;♥&lt;/span&gt;
+&lt;button class="px-btn px-shake"&gt;SHAKE&lt;/button&gt;
+&lt;button class="px-btn px-bounce"&gt;JUMP&lt;/button&gt;</pre>
+
+<!-- 10 CRT / SCANLINE -->
+<h2>// 10. CRT SCANLINE</h2>
+<div class="px-frame" style="position:relative;height:80px;background:#0d0d1a;overflow:hidden">
+  <div class="px-scanline" style="position:absolute;inset:0"></div>
+  <p style="position:relative;font-family:'VT323',monospace;font-size:28px;color:#39ff14;padding:16px">C:\&gt; BOOT OK_</p>
+</div>
+<pre>&lt;div style="position:relative"&gt;
+  &lt;div class="px-scanline" style="position:absolute;inset:0"&gt;&lt;/div&gt;
+  &lt;p&gt;content over scanlines&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+<!-- 11 TOOLTIP -->
+<h2>// 11. TOOLTIP</h2>
+<div style="display:flex;gap:24px;padding-top:32px;flex-wrap:wrap">
+  <span class="px-tooltip px-badge" style="color:#00f5ff;background:#1a1a2e" data-tip="NEON CYAN">HOVER ME</span>
+  <span class="px-tooltip px-badge" style="color:#39ff14;background:#0f380f" data-tip="GAME BOY">AND ME</span>
+  <span class="px-tooltip px-badge" style="color:#ff2d78;background:#1a1a2e" data-tip="HOT PINK">ME TOO</span>
+</div>
+<pre>&lt;span class="px-tooltip px-badge" data-tip="TOOLTIP TEXT"&gt;HOVER ME&lt;/span&gt;</pre>
+
+<!-- 12 SPRITES -->
+<h2>// 12. SPRITE CONTAINERS</h2>
+<div class="gap">
+  <div class="px-sprite px-sprite-sm" style="background:linear-gradient(45deg,#ff2d78,#bf00ff);display:flex;align-items:center;justify-content:center;font-size:12px">8</div>
+  <div class="px-sprite px-sprite-md" style="background:linear-gradient(45deg,#00f5ff,#39ff14);display:flex;align-items:center;justify-content:center;font-size:14px">16</div>
+  <div class="px-sprite px-sprite-lg" style="background:linear-gradient(45deg,#ffe600,#ff6b00);display:flex;align-items:center;justify-content:center;font-size:16px">32</div>
+  <div class="px-sprite px-sprite-xl" style="background:linear-gradient(45deg,#0000fc,#bf00ff);display:flex;align-items:center;justify-content:center;font-size:20px">64</div>
+</div>
+<pre>&lt;div class="px-sprite px-sprite-sm"&gt;8px&lt;/div&gt;
+&lt;div class="px-sprite px-sprite-md"&gt;16px&lt;/div&gt;
+&lt;div class="px-sprite px-sprite-lg"&gt;32px&lt;/div&gt;
+&lt;div class="px-sprite px-sprite-xl"&gt;64px&lt;/div&gt;</pre>
+
+<!-- FOOTER -->
+<footer style="text-align:center;margin-top:64px;padding-top:32px;border-top:2px solid #2d2d44">
+  <p style="font-size:11px;color:#4a4a6a">
+    @blue87moon/pixelart-css — MIT License<br>
+    <a href="https://github.com/blackmoon87/pixelart.css" style="color:#00f5ff">github.com/blackmoon87/pixelart.css</a> ·
+    <a href="https://www.npmjs.com/package/@blue87moon/pixelart-css" style="color:#ff2d78">npmjs.com</a>
+  </p>
+  <p class="px-blink" style="font-family:'Press Start 2P',monospace;font-size:7px;color:#6b6b8e;margin-top:16px">INSERT COIN TO CONTINUE</p>
+</footer>
+
+</body>
+</html>
