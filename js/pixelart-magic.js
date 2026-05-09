@@ -99,15 +99,38 @@
   window.PixelArtMagic = {
     apply: function(container) {
       if (!container) return;
-      container.style.imageRendering = 'pixelated';
       
-      mappings.forEach(mapping => {
-        const elements = container.querySelectorAll(mapping.selector);
-        elements.forEach(el => {
-          el.classList.add(...mapping.classes);
+      try {
+        container.style.imageRendering = 'pixelated';
+        let totalConverted = 0;
+        let convertedDetails = {};
+        
+        mappings.forEach(mapping => {
+          const elements = container.querySelectorAll(mapping.selector);
+          if (elements.length > 0) {
+            convertedDetails[mapping.classes.join('.')] = elements.length;
+            elements.forEach(el => {
+              // Strip potentially interfering inline styles from standard elements
+              if (el.tagName === 'BUTTON' || el.tagName === 'INPUT') {
+                el.style.borderRadius = '';
+                el.style.border = '';
+                el.style.background = '';
+              }
+              el.classList.add(...mapping.classes);
+              totalConverted++;
+            });
+          }
         });
-      });
-      console.log('[PixelArt CSS] 🪄 Magic applied to container.');
+        
+        if (totalConverted > 0) {
+          console.log(`[PixelArt CSS] 🪄 Magic applied. Converted ${totalConverted} items.`, convertedDetails);
+        } else {
+          console.warn(`[PixelArt CSS] ⚠️ Magic ran, but 0 items were converted. (Are elements loaded dynamically later?)`);
+        }
+        
+      } catch (error) {
+        console.error(`[PixelArt CSS] ❌ ERROR during Magic transformation:`, error);
+      }
     },
     
     init: function() {
