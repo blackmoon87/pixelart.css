@@ -47,7 +47,7 @@
     "mutations": "immutable-css src/pixelart.css --strict",
     "build": "npm run build:css && npm run build:minify",
     "build:css": "postcss src/pixelart.css -o css/pixelart.css",
-    "build:minify": "postcss src/pixelart.css --use postcss-minify -o css/pixelart.min.css",
+    "build:minify": "postcss css/pixelart.css --use postcss-minify -o css/pixelart.min.css",
     "build:watch": "postcss src/pixelart.css -o css/pixelart.css --watch"
   }
 }
