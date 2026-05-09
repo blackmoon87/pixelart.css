@@ -133,11 +133,43 @@
       }
     },
     
+    observe: function(container) {
+      if (!window.MutationObserver) return;
+      
+      let debounceTimer;
+      const observer = new MutationObserver(mutations => {
+        let shouldApply = false;
+        for (let mutation of mutations) {
+          if (mutation.addedNodes.length > 0) {
+            for (let node of mutation.addedNodes) {
+              if (node.nodeType === 1) { // ELEMENT_NODE
+                shouldApply = true;
+                break;
+              }
+            }
+          }
+          if (shouldApply) break;
+        }
+        
+        if (shouldApply) {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            console.log('[PixelArt CSS] 👁️ Dynamic elements detected. Re-applying magic...');
+            // We re-apply to the whole container. The apply function's :not([class*="px-"]) 
+            // selectors ensure we only target new elements, so it's highly performant.
+            window.PixelArtMagic.apply(container);
+          }, 100);
+        }
+      });
+      
+      observer.observe(container, { childList: true, subtree: true });
+      console.log('[PixelArt CSS] 👁️ MutationObserver started. Watching for dynamic elements.');
+    },
+
     init: function() {
       let magicContainers = document.querySelectorAll('[data-pixelart="true"]');
       
       // If no specific containers are marked, assume the user wants it globally on the body
-      // (because they included the magic script!).
       if (magicContainers.length === 0) {
         if (document.body && document.body.getAttribute('data-pixelart') !== 'false') {
           magicContainers = [document.body];
@@ -147,7 +179,10 @@
       }
       
       console.log('[PixelArt CSS] 🪄 Magic mode activated. Transforming elements...');
-      magicContainers.forEach(container => window.PixelArtMagic.apply(container));
+      magicContainers.forEach(container => {
+        window.PixelArtMagic.apply(container);
+        window.PixelArtMagic.observe(container); // Start watching for SPA updates
+      });
     }
   };
 
