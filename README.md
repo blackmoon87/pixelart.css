@@ -1,6 +1,6 @@
 # PIXELART.CSS
 
-**Professional pixel-art CSS frame styles.**
+**Professional pixel-art CSS framework with zero-code magic.**
 
 > `image-rendering: pixelated;`
 
@@ -23,13 +23,16 @@
 
 - **Zero border-radius** — hard pixel edges everywhere
 - **Pixel-art box-shadow frames** — 7 shadow styles (raised, inset, neon glow, double-border…)
-- **Retro color palette** — NES, Game Boy (4-shade), CGA, and Synthwave neons
+- **Retro color palettes** — NES, Game Boy (4-shade), CGA, and Synthwave neons
 - **Pixel fonts** — Press Start 2P, VT323, Share Tech Mono, Silkscreen (Google Fonts)
-- **Pixel UI components** — windows, buttons, badges, progress bars, tooltips, sprite containers
+- **17 UI component categories** — frames, windows, buttons, badges, cards, tabs, modals, alerts, forms, tooltips, and more
 - **CRT scanline overlay** — `.px-scanline`, `.px-crt`
 - **Pixel animations** — blink, shake, bounce, float, spin (all `steps()`-based — no easing)
 - **Pixel backgrounds** — grid, checker, starfield
 - **Pixel text effects** — hard shadow, neon glow, outline, rainbow gradient
+- **3 built-in themes** — Dark (default), Light (Retro Beige), Game Boy (Classic Green)
+- **Magic Mode** — auto-transform any site with one `<script>` tag (SPA-compatible via MutationObserver)
+- **Framework-proof** — overrides Tailwind, Bootstrap, and any CSS framework via inline `!important`
 - **Mobile-first**, 8px baseline grid, responsive breakpoints
 - Built with PostCSS
 
@@ -37,10 +40,10 @@
 
 ## Getting Started
 
-### CDN
+### CDN (Recommended)
 
 ```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/blackmoon87/pixelart.css/main/css/pixelart.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/blackmoon87/pixelart.css@main/css/pixelart.min.css">
 ```
 
 ### npm
@@ -66,6 +69,8 @@ npm run build
 
 ## Components
 
+### Layout & Frames
+
 | Class | Description |
 |-------|-------------|
 | `.px-frame` | 3D raised pixel frame |
@@ -73,27 +78,81 @@ npm run build
 | `.px-frame-gb` | Game Boy green frame |
 | `.px-frame-inset` | Sunken/pressed frame |
 | `.px-window` | Retro OS window with title bar |
-| `.px-btn` | 3D pixel button (6 color variants) |
-| `.px-badge` | Inline pixel tag/badge |
-| `.px-progress` | Retro progress bar |
-| `.px-scanline` | CRT scanline overlay |
+| `.px-card` | Content card with header/body/footer |
+| `.px-card-neon` | Neon-styled card variant |
+| `.px-card-gb` | Game Boy card variant |
+
+### Interactive
+
+| Class | Description |
+|-------|-------------|
+| `.px-btn` | 3D pixel button |
+| `.px-btn-primary` `.px-btn-success` `.px-btn-danger` `.px-btn-warning` `.px-btn-neon` | Button color variants |
+| `.px-press` | 3D press-down effect on click |
+| `.px-tabs` / `.px-tab` | Tabbed navigation |
+| `.px-modal` | Modal dialog (native `<dialog>` support) |
+| `.px-alert` | Notification alert |
+| `.px-alert-success` `.px-alert-danger` `.px-alert-warning` | Alert color variants |
 | `.px-tooltip` | Pixel-art tooltip |
+
+### Forms
+
+| Class | Description |
+|-------|-------------|
+| `.px-input` | Text input / textarea |
+| `.px-select` | Dropdown select |
+| `.px-checkbox` | Custom pixel checkbox |
+| `.px-radio` | Custom pixel radio button |
+
+### Typography & Text
+
+| Class | Description |
+|-------|-------------|
+| `.px-text-shadow` | Hard pixel text shadow |
+| `.px-text-shadow-neon` | Neon text glow |
+| `.px-text-rainbow` | Rainbow gradient text |
+| `.px-link` | Pixel-styled hyperlink |
+| `.px-blockquote` | Pixel-art blockquote |
+| `.px-kbd` | Keyboard key indicator |
+| `.px-badge` | Inline pixel tag/badge |
+
+### Borders
+
+| Class | Description |
+|-------|-------------|
+| `.px-border` | Standard pixel border |
+| `.px-border-neon` `.px-border-pink` `.px-border-gold` `.px-border-green` | Colored borders |
+| `.px-border-double` `.px-border-double-neon` | Double-line borders |
+| `.px-border-dashed` `.px-border-dashed-neon` | Dashed borders |
+
+### Effects & Overlays
+
+| Class | Description |
+|-------|-------------|
+| `.px-scanline` | CRT scanline overlay |
+| `.px-progress` | Retro progress bar |
 | `.px-sprite` | Sprite container (`pixelated` rendering) |
+| `.px-render` | Force `image-rendering: pixelated` |
 | `.px-bg-grid` | 8px pixel grid background |
 | `.px-bg-checker` | 8px checkerboard background |
 | `.px-bg-stars` | Starfield background |
-| `.px-blink` | Blinking animation |
-| `.px-shake` | Shake-on-hover animation |
-| `.px-bounce` | Bounce-on-hover animation |
-| `.px-text-shadow-neon` | Neon text glow effect |
-| `.px-text-rainbow` | Rainbow gradient text |
+
+### Animations
+
+| Class | Description |
+|-------|-------------|
+| `.px-blink` | Blinking (steps-based) |
+| `.px-shake` | Shake on hover |
+| `.px-bounce` | Bounce on hover |
+| `.px-float` | Floating animation |
+| `.px-spin` | Spinning animation |
 
 ---
 
 ## Color Palettes
 
 - **NES** — 14 colors faithful to the Nintendo Entertainment System
-- **Game Boy** — 5-shade green palette (DMG-01)
+- **Game Boy** — 4-shade green palette (DMG-01)
 - **CGA** — 8 classic PC colors (modes 4 & 5)
 - **Synthwave Neons** — pink, cyan, purple, yellow, green, orange
 
@@ -101,58 +160,75 @@ npm run build
 
 ## 🪄 Magic Mode (Zero-Code)
 
-Want to pixelate your site without writing classes? Just include our **Magic Script** at the bottom of your page! It will automatically transform the entire `<body>` into Pixel Art.
+Transform any website into pixel-art with a single `<script>` tag. No classes needed.
 
 ```html
 <body>
-  <!-- Standard HTML automatically transforms into Pixel Art! -->
   <button>Click Me</button>
-  <progress value="50" max="100"></progress>
-  <h1>Title</h1>
   <input type="text" placeholder="Type...">
+  <progress value="50" max="100"></progress>
   
-  <!-- Include the magic script -->
-  <script src="https://raw.githubusercontent.com/blackmoon87/pixelart.css/main/js/pixelart-magic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/blackmoon87/pixelart.css@main/css/pixelart.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/blackmoon87/pixelart.css@main/js/pixelart-magic.js"></script>
 </body>
 ```
 
-*(Note: If you only want the magic applied to a specific section, simply add `data-pixelart="true"` to that container `<div>`. The script is smart and will only target that area!)*
+### Usage Modes
+
+| Mode | How | Description |
+|------|-----|-------------|
+| **Auto (full page)** | Just include the `<script>` | Transforms entire `<body>` |
+| **Scoped** | `<div data-pixelart="true">` | Only transforms elements inside that container |
+| **Opt-out** | `<body data-pixelart="false">` | Prevents auto-transformation |
+| **Programmatic** | `PixelArtMagic.apply(element)` | Call from your own JS code |
+
+### SPA Support
+
+The Magic Script includes a built-in `MutationObserver` that automatically detects and transforms dynamically-injected elements (React, Vue, Angular, etc.).
+
+### Console Injection (for testing on any site)
+
+```javascript
+(function() {
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = 'https://cdn.jsdelivr.net/gh/blackmoon87/pixelart.css@main/css/pixelart.min.css';
+  document.head.appendChild(css);
+
+  var js = document.createElement('script');
+  js.src = 'https://cdn.jsdelivr.net/gh/blackmoon87/pixelart.css@main/js/pixelart-magic.js';
+  js.onload = function() { PixelArtMagic.init(); };
+  document.body.appendChild(js);
+})();
+```
 
 ---
 
 ## 🎨 Theming & Customization
 
-### Light Theme (Retro Beige)
-The framework defaults to a Dark Arcade aesthetic. You can instantly switch your entire page to a Retro Light Theme (IBM Beige style) by adding `data-theme="light"` to your `<html>` or `<body>` tag.
+### Built-in Themes
 
 ```html
+<!-- Dark (default) — no attribute needed -->
+<html>
+
+<!-- Light (Retro IBM Beige) -->
 <html data-theme="light">
-  <!-- All pixel frames, inputs, and text will invert perfectly! -->
-</html>
-```
 
-### Game Boy Theme (Classic Green)
-We also included a built-in 4-color Game Boy palette to demonstrate the power of CSS variables.
-
-```html
+<!-- Game Boy (Classic 4-color Green) -->
 <html data-theme="gameboy">
-  <!-- Everything turns into classic retro green! -->
-</html>
 ```
 
-### Custom Variables
-You can easily customize the core colors and borders of the framework by overriding CSS Custom Properties (`:root` variables) in your own stylesheet:
+### Custom Color Override
+
+Override CSS variables in your own stylesheet to create any theme:
 
 ```css
 :root {
-  /* Change the default frame shadow colors */
   --px-frame-shadow: #111111;
   --px-frame-mid:    #333333;
-  --px-frame-dark:   #222222;
-  --px-frame-light:  #555555;
-
-  /* Change the primary neon color */
-  --px-neon-cyan:    #ff00ff; /* Make neon cyan actually magenta */
+  --px-neon-cyan:    #ff00ff;
+  --px-neon-pink:    #00ffff;
 }
 ```
 
