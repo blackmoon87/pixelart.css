@@ -100,6 +100,38 @@
     .spacer {
       height: 16px;
     }
+
+    /* Magic Demo - Ugly Standard Styles before activation */
+    #magic-demo-container[data-pixelart="false"] {
+      font-family: Arial, Helvetica, sans-serif !important;
+      background: #ffffff !important;
+      color: #000000 !important;
+      border-radius: 8px !important;
+    }
+    #magic-demo-container[data-pixelart="false"] * {
+      font-family: Arial, Helvetica, sans-serif !important;
+      color: #000000 !important;
+      text-shadow: none !important;
+      box-shadow: none !important;
+      letter-spacing: normal !important;
+    }
+    #magic-demo-container[data-pixelart="false"] h2 {
+      font-weight: bold !important;
+      margin-bottom: 0 !important;
+      font-size: 24px !important;
+    }
+    #magic-demo-container[data-pixelart="false"] button,
+    #magic-demo-container[data-pixelart="false"] input[type="text"] {
+      background: #f0f0f0 !important;
+      border: 1px solid #767676 !important;
+      padding: 4px 8px !important;
+      border-radius: 3px !important;
+      font-size: 14px !important;
+    }
+    #magic-demo-container[data-pixelart="false"] a {
+      color: #0000ee !important;
+      text-decoration: underline !important;
+    }
   </style>
 </head>
 
@@ -459,19 +491,19 @@
 
       <!-- MAGIC CONTAINER START -->
       <div id="magic-demo-container" data-pixelart="false" style="display:flex; flex-direction:column; gap:16px; background:#0d0d0d; padding:24px; transition:all 0.3s;">
-        <h2 style="color:#fff;">Standard H2 Tag</h2>
-        <p style="color:#9090b0; font-family:sans-serif;">Standard P tag (inherits font from container or body)</p>
+        <h2>Standard H2 Tag</h2>
+        <p style="color:#9090b0;">Standard P tag (inherits font from container or body)</p>
         
         <div style="display:flex; gap:16px;">
           <button>Standard Button</button>
           <input type="text" placeholder="Standard Input">
         </div>
         
-        <label style="color:#fff; font-family:sans-serif;">
+        <label>
           <input type="checkbox"> Standard Checkbox
         </label>
         
-        <label style="color:#fff; font-family:sans-serif;">
+        <label>
           <input type="radio" name="magic-radio" checked> Standard Radio
         </label>
         
@@ -479,7 +511,7 @@
         
         <hr style="width:100%; border:1px solid #333;">
         
-        <a href="#" style="color:#00f5ff; font-family:sans-serif;">Standard Link</a>
+        <a href="#">Standard Link</a>
       </div>
       <!-- MAGIC CONTAINER END -->
     </div>
