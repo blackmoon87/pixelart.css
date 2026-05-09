@@ -1,0 +1,207 @@
+/*
+
+   PIXEL.ART — SKINS (Text & Background Colors)
+   Remapped to the pixel-art color palette.
+
+*/
+
+/* ── Text Colors ────────────────────────────── */
+
+/* Transparencies */
+.black-90 { color: var(--px-black-90); }
+.black-80 { color: var(--px-black-80); }
+.black-70 { color: var(--px-black-70); }
+.black-60 { color: var(--px-black-60); }
+.black-50 { color: var(--px-black-50); }
+.black-40 { color: var(--px-black-40); }
+.black-30 { color: var(--px-black-30); }
+.black-20 { color: var(--px-black-20); }
+.black-10 { color: var(--px-black-10); }
+.black-05 { color: var(--px-black-05); }
+
+.white-90 { color: var(--px-white-90); }
+.white-80 { color: var(--px-white-80); }
+.white-70 { color: var(--px-white-70); }
+.white-60 { color: var(--px-white-60); }
+.white-50 { color: var(--px-white-50); }
+.white-40 { color: var(--px-white-40); }
+.white-30 { color: var(--px-white-30); }
+.white-20 { color: var(--px-white-20); }
+.white-10 { color: var(--px-white-10); }
+
+/* Pixel Grayscale */
+.black        { color: var(--px-black); }
+.near-black   { color: var(--px-near-black); }
+.dark-gray    { color: var(--px-dark-gray); }
+.mid-gray     { color: var(--px-mid-gray); }
+.gray         { color: var(--px-gray); }
+.silver       { color: var(--px-silver); }
+.light-silver { color: var(--px-light-silver); }
+.moon-gray    { color: var(--px-moon-gray); }
+.light-gray   { color: var(--px-light-gray); }
+.near-white   { color: var(--px-near-white); }
+.white        { color: var(--px-white); }
+
+/* NES Palette */
+.dark-red     { color: var(--px-nes-dark-red); }
+.red          { color: var(--px-nes-red); }
+.light-red    { color: var(--px-nes-orange); }
+.orange       { color: var(--px-nes-orange); }
+.gold         { color: var(--px-nes-yellow); }
+.yellow       { color: var(--px-nes-yellow); }
+.light-yellow { color: var(--px-gb-lightest); }
+.purple       { color: var(--px-nes-purple); }
+.light-purple { color: var(--px-neon-purple); }
+.dark-pink    { color: var(--px-neon-pink); }
+.hot-pink     { color: var(--px-neon-pink); }
+.pink         { color: var(--px-nes-pink); }
+.light-pink   { color: var(--px-nes-tan); }
+.dark-green   { color: var(--px-gb-darkest); }
+.green        { color: var(--px-nes-green); }
+.light-green  { color: var(--px-gb-mid); }
+.navy         { color: var(--px-nes-blue); }
+.dark-blue    { color: var(--px-nes-blue); }
+.blue         { color: var(--px-nes-sky); }
+.light-blue   { color: var(--px-nes-sky); }
+.lightest-blue { color: var(--px-gb-lightest); }
+.washed-blue  { color: var(--px-gb-lightest); }
+.washed-green { color: var(--px-gb-light); }
+.washed-yellow{ color: var(--px-nes-tan); }
+.washed-red   { color: var(--px-nes-tan); }
+.color-inherit { color: inherit; }
+
+/* Pixel-exclusive neons */
+.px-neon-pink   { color: var(--px-neon-pink); }
+.px-neon-cyan   { color: var(--px-neon-cyan); }
+.px-neon-purple { color: var(--px-neon-purple); }
+.px-neon-yellow { color: var(--px-neon-yellow); }
+.px-neon-green  { color: var(--px-neon-green); }
+.px-neon-orange { color: var(--px-neon-orange); }
+
+/* Game Boy palette */
+.px-gb-darkest  { color: var(--px-gb-darkest); }
+.px-gb-dark     { color: var(--px-gb-dark); }
+.px-gb-mid      { color: var(--px-gb-mid); }
+.px-gb-light    { color: var(--px-gb-light); }
+.px-gb-lightest { color: var(--px-gb-lightest); }
+
+/* NES aliases */
+.px-nes-red    { color: var(--px-nes-red); }
+.px-nes-blue   { color: var(--px-nes-blue); }
+.px-nes-green  { color: var(--px-nes-green); }
+.px-nes-yellow { color: var(--px-nes-yellow); }
+.px-nes-purple { color: var(--px-nes-purple); }
+.px-nes-teal   { color: var(--px-nes-teal); }
+.px-nes-sky    { color: var(--px-nes-sky); }
+.px-nes-pink   { color: var(--px-nes-pink); }
+.px-nes-brown  { color: var(--px-nes-brown); }
+.px-nes-tan    { color: var(--px-nes-tan); }
+.px-nes-white  { color: var(--px-nes-white); }
+.px-nes-black  { color: var(--px-nes-black); }
+
+/* CGA palette */
+.px-cga-magenta   { color: var(--px-cga-magenta); }
+.px-cga-cyan      { color: var(--px-cga-cyan); }
+.px-cga-hi-mag    { color: var(--px-cga-hi-mag); }
+.px-cga-hi-cyan   { color: var(--px-cga-hi-cyan); }
+
+
+/* ── Background Colors ──────────────────────── */
+
+/* Transparencies */
+.bg-black-90 { background-color: var(--px-black-90); }
+.bg-black-80 { background-color: var(--px-black-80); }
+.bg-black-70 { background-color: var(--px-black-70); }
+.bg-black-60 { background-color: var(--px-black-60); }
+.bg-black-50 { background-color: var(--px-black-50); }
+.bg-black-40 { background-color: var(--px-black-40); }
+.bg-black-30 { background-color: var(--px-black-30); }
+.bg-black-20 { background-color: var(--px-black-20); }
+.bg-black-10 { background-color: var(--px-black-10); }
+.bg-black-05 { background-color: var(--px-black-05); }
+.bg-white-90 { background-color: var(--px-white-90); }
+.bg-white-80 { background-color: var(--px-white-80); }
+.bg-white-70 { background-color: var(--px-white-70); }
+.bg-white-60 { background-color: var(--px-white-60); }
+.bg-white-50 { background-color: var(--px-white-50); }
+.bg-white-40 { background-color: var(--px-white-40); }
+.bg-white-30 { background-color: var(--px-white-30); }
+.bg-white-20 { background-color: var(--px-white-20); }
+.bg-white-10 { background-color: var(--px-white-10); }
+
+/* Pixel Grayscale */
+.bg-black        { background-color: var(--px-black); }
+.bg-near-black   { background-color: var(--px-near-black); }
+.bg-dark-gray    { background-color: var(--px-dark-gray); }
+.bg-mid-gray     { background-color: var(--px-mid-gray); }
+.bg-gray         { background-color: var(--px-gray); }
+.bg-silver       { background-color: var(--px-silver); }
+.bg-light-silver { background-color: var(--px-light-silver); }
+.bg-moon-gray    { background-color: var(--px-moon-gray); }
+.bg-light-gray   { background-color: var(--px-light-gray); }
+.bg-near-white   { background-color: var(--px-near-white); }
+.bg-white        { background-color: var(--px-white); }
+.bg-transparent  { background-color: transparent; }
+
+/* NES Palette */
+.bg-dark-red     { background-color: var(--px-nes-dark-red); }
+.bg-red          { background-color: var(--px-nes-red); }
+.bg-light-red    { background-color: var(--px-nes-orange); }
+.bg-orange       { background-color: var(--px-nes-orange); }
+.bg-gold         { background-color: var(--px-nes-yellow); }
+.bg-yellow       { background-color: var(--px-nes-yellow); }
+.bg-light-yellow { background-color: var(--px-gb-lightest); }
+.bg-purple       { background-color: var(--px-nes-purple); }
+.bg-light-purple { background-color: var(--px-neon-purple); }
+.bg-dark-pink    { background-color: var(--px-neon-pink); }
+.bg-hot-pink     { background-color: var(--px-neon-pink); }
+.bg-pink         { background-color: var(--px-nes-pink); }
+.bg-light-pink   { background-color: var(--px-nes-tan); }
+.bg-dark-green   { background-color: var(--px-gb-darkest); }
+.bg-green        { background-color: var(--px-nes-green); }
+.bg-light-green  { background-color: var(--px-gb-mid); }
+.bg-navy         { background-color: var(--px-nes-blue); }
+.bg-dark-blue    { background-color: var(--px-nes-blue); }
+.bg-blue         { background-color: var(--px-nes-sky); }
+.bg-light-blue   { background-color: var(--px-nes-sky); }
+.bg-lightest-blue { background-color: var(--px-gb-lightest); }
+.bg-washed-blue  { background-color: var(--px-gb-lightest); }
+.bg-washed-green { background-color: var(--px-gb-light); }
+.bg-washed-yellow{ background-color: var(--px-nes-tan); }
+.bg-washed-red   { background-color: var(--px-nes-tan); }
+.bg-inherit      { background-color: inherit; }
+
+/* Pixel-exclusive neon backgrounds */
+.bg-px-neon-pink   { background-color: var(--px-neon-pink); }
+.bg-px-neon-cyan   { background-color: var(--px-neon-cyan); }
+.bg-px-neon-purple { background-color: var(--px-neon-purple); }
+.bg-px-neon-yellow { background-color: var(--px-neon-yellow); }
+.bg-px-neon-green  { background-color: var(--px-neon-green); }
+.bg-px-neon-orange { background-color: var(--px-neon-orange); }
+
+/* Game Boy backgrounds */
+.bg-px-gb-darkest  { background-color: var(--px-gb-darkest); }
+.bg-px-gb-dark     { background-color: var(--px-gb-dark); }
+.bg-px-gb-mid      { background-color: var(--px-gb-mid); }
+.bg-px-gb-light    { background-color: var(--px-gb-light); }
+.bg-px-gb-lightest { background-color: var(--px-gb-lightest); }
+
+/* NES bg aliases */
+.bg-px-nes-red     { background-color: var(--px-nes-red); }
+.bg-px-nes-blue    { background-color: var(--px-nes-blue); }
+.bg-px-nes-green   { background-color: var(--px-nes-green); }
+.bg-px-nes-yellow  { background-color: var(--px-nes-yellow); }
+.bg-px-nes-purple  { background-color: var(--px-nes-purple); }
+.bg-px-nes-teal    { background-color: var(--px-nes-teal); }
+.bg-px-nes-sky     { background-color: var(--px-nes-sky); }
+.bg-px-nes-pink    { background-color: var(--px-nes-pink); }
+.bg-px-nes-brown   { background-color: var(--px-nes-brown); }
+.bg-px-nes-tan     { background-color: var(--px-nes-tan); }
+.bg-px-nes-white   { background-color: var(--px-nes-white); }
+.bg-px-nes-black   { background-color: var(--px-nes-black); }
+
+/* CGA backgrounds */
+.bg-px-cga-magenta { background-color: var(--px-cga-magenta); }
+.bg-px-cga-cyan    { background-color: var(--px-cga-cyan); }
+.bg-px-cga-hi-mag  { background-color: var(--px-cga-hi-mag); }
+.bg-px-cga-hi-cyan { background-color: var(--px-cga-hi-cyan); }

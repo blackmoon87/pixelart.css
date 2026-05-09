@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PIXEL.ART CSS — Professional Pixel Art Frame Library</title>
+  <meta name="description"
+    content="A professional pixel-art CSS framework — featuring NES, Game Boy, CGA, and synthwave neon components.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/css/pixelart.css">
+  <style>
+    /* ── Page shell ───────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      background-image:
+        linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+      background-size: 8px 8px;
+      font-family: 'Press Start 2P', monospace;
+      color: #fcfcfc;
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+
+    /* CRT scanline overlay on page */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(to bottom,
+          transparent 0px, transparent 2px,
+          rgba(0, 0, 0, 0.08) 2px, rgba(0, 0, 0, 0.08) 4px);
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .showcase-section {
+      margin-bottom: 64px;
+    }
+
+    .showcase-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 10px;
+      color: var(--px-neon-cyan, #00f5ff);
+      border-bottom: 2px solid var(--px-neon-cyan, #00f5ff);
+      padding-bottom: 8px;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 8px var(--px-neon-cyan, #00f5ff);
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .col {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .label {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #6b6b8e;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .swatch-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+
+    .swatch {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #000;
+      display: inline-block;
+      cursor: help;
+    }
+
+    .spacer {
+      height: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ HERO ══════════════════════════════════ -->
+  <div style="text-align:center; margin-bottom:64px;">
+    <p style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#6b6b8e; margin-bottom:8px;">► PIXEL.ART
+      CSS v1.0 ◄</p>
+    <h1
+      style="font-family:'Press Start 2P',monospace; font-size:clamp(14px,3vw,28px); color:#00f5ff; text-shadow:0 0 16px #00f5ff, 4px 4px 0 #bf00ff; line-height:2; margin-bottom:16px;">
+      PIXEL.ART<br><span style="color:#ff2d78; font-size:0.6em;">CSS FRAMEWORK</span>
+    </h1>
+    <p style="font-family:'VT323',monospace; font-size:24px; color:#9090b0; margin-bottom:32px;">
+      Professional pixel-art frame styles
+    </p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <button id="btn-hero-start" class="px-btn px-btn-neon px-bounce">▶ START</button>
+      <button id="btn-hero-docs" class="px-btn px-btn-primary px-press">DOCS</button>
+      <button id="btn-hero-gb" class="px-btn px-btn-gb px-press">GAME BOY</button>
+    </div>
+  </div>
+
+  <!-- ══ FRAMES ════════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 01. PIXEL FRAMES</p>
+    <div class="row">
+      <div class="col">
+        <span class="label">px-frame (3D raised)</span>
+        <div class="px-frame bg-near-black" style="padding:16px;">
+          <p style="font-size:8px; color:#fcfcfc; line-height:2;">Standard pixel<br>frame. Inset bevel.</p>
+        </div>
+      </div>
+      <div class="col">
+        <span class="label">px-frame-neon (synthwave)</span>
+        <div class="px-frame-neon bg-near-black" style="padding:16px;">
+          <p style="font-size:8px; color:#00f5ff; line-height:2;">Neon cyan border<br>+ purple glow.</p>
+        </div>
+      </div>
+      <div class="col">
+        <span class="label">px-frame-gb (Game Boy)</span>
+        <div class="px-frame-gb" style="padding:16px;">
+          <p style="font-size:8px; color:#0f380f; line-height:2; font-family:'Press Start 2P',monospace;">GAME
+            BOY<br>STYLE</p>
+        </div>
+      </div>
+      <div class="col">
+        <span class="label">px-frame-inset (sunken)</span>
+        <div class="px-frame-inset bg-dark-gray" style="padding:16px;">
+          <p style="font-size:8px; color:#9090b0; line-height:2;">Sunken inset.<br>Pressed state.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ WINDOWS ═══════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 02. PIXEL WINDOWS</p>
+    <div class="row">
+      <div class="col" style="max-width:320px;">
+        <div class="px-window">
+          <div class="px-window-title">
+            <span>SYSTEM.EXE</span>
+            <span>
+              <span class="px-window-btn">_</span>
+              <span class="px-window-btn">□</span>
+              <span class="px-window-btn" style="color:#d82800;">✕</span>
+            </span>
+          </div>
+          <div class="px-window-body" style="background:#c4cfa1; padding:16px;">
+            <p style="font-family:'Press Start 2P',monospace; font-size:7px; color:#0f380f; line-height:2.5;">
+              HELLO WORLD!<br>
+              PRESS START<br>
+              TO CONTINUE...
+            </p>
+            <div class="spacer"></div>
+            <button id="btn-win-ok" class="px-btn px-btn-primary" style="font-size:7px; padding:6px 12px;">OK</button>
+            <button id="btn-win-cancel" class="px-btn"
+              style="font-size:7px; padding:6px 12px; background:#c4cfa1; border-color:#0f380f; margin-left:8px;">CANCEL</button>
+          </div>
+        </div>
+      </div>
+      <div class="col" style="max-width:320px;">
+        <div class="px-window"
+          style="border-color:#bf00ff; box-shadow: inset 2px 2px 0 #fff, inset -2px -2px 0 #888, 4px 4px 0 #bf00ff;">
+          <div class="px-window-title" style="background:linear-gradient(90deg, #bf00ff, #ff2d78);">
+            <span>SYNTH.WAVE</span>
+            <span>
+              <span class="px-window-btn">_</span>
+              <span class="px-window-btn">□</span>
+              <span class="px-window-btn" style="color:#ff2d78;">✕</span>
+            </span>
+          </div>
+          <div class="px-window-body" style="background:#1a1a2e; padding:16px;">
+            <p class="px-text-shadow-neon"
+              style="font-family:'Press Start 2P',monospace; font-size:7px; color:#00f5ff; line-height:2.5;">
+              NEON WINDOW<br>
+              SYNTHWAVE MODE<br>
+              <span style="color:#ff2d78;">ACTIVE ■</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BUTTONS ═══════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 03. PIXEL BUTTONS</p>
+    <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+      <button id="btn-primary" class="px-btn px-btn-primary px-press">PRIMARY</button>
+      <button id="btn-danger" class="px-btn px-btn-danger px-press">DANGER</button>
+      <button id="btn-success" class="px-btn px-btn-success px-press">SUCCESS</button>
+      <button id="btn-gold" class="px-btn px-btn-gold px-press">GOLD</button>
+      <button id="btn-neon" class="px-btn px-btn-neon px-glow">NEON</button>
+      <button id="btn-gb2" class="px-btn px-btn-gb px-press">GAME BOY</button>
+      <button id="btn-plain" class="px-btn px-press"
+        style="background:#2d2d44; color:#fcfcfc; border-color:#000;">DEFAULT</button>
+    </div>
+  </div>
+
+  <!-- ══ BADGES ═════════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 04. PIXEL BADGES</p>
+    <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+      <span class="px-badge" style="color:#00f5ff; background:#1a1a2e;">NEON</span>
+      <span class="px-badge" style="color:#ff2d78; background:#1a1a2e;">HOT</span>
+      <span class="px-badge" style="color:#ffe600; background:#1a1a2e;">GOLD</span>
+      <span class="px-badge" style="color:#39ff14; background:#1a1a2e;">LIVE</span>
+      <span class="px-badge" style="color:#d82800; background:#fcfcfc;">ERROR</span>
+      <span class="px-badge" style="color:#0f380f; background:#9bbc0f;">GAME BOY</span>
+      <span class="px-badge px-blink" style="color:#ff2d78; background:#1a1a2e;">● REC</span>
+    </div>
+  </div>
+
+  <!-- ══ PROGRESS ══════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 05. PIXEL PROGRESS BARS</p>
+    <div style="display:flex; flex-direction:column; gap:16px; max-width:480px;">
+      <div>
+        <span class="label">HP — Green</span>
+        <progress id="progress-hp" class="px-progress" value="75" max="100"></progress>
+      </div>
+      <div>
+        <span class="label">MP — Blue</span>
+        <progress id="progress-mp" class="px-progress px-progress-fill-blue" value="45" max="100"></progress>
+      </div>
+      <div>
+        <span class="label">DANGER — Red</span>
+        <progress id="progress-danger" class="px-progress px-progress-fill-red" value="15" max="100"></progress>
+      </div>
+      <div>
+        <span class="label">NEON — Animated</span>
+        <div class="px-progress">
+          <div class="px-progress-fill px-progress-fill-neon" style="width:60%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SHADOWS ════════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 06. PIXEL SHADOWS</p>
+    <div class="row">
+      <div class="col" style="text-align:center;">
+        <span class="label">px-shadow-1 (outline)</span>
+        <div class="px-shadow-1"
+          style="background:#2d2d44; padding:16px; display:inline-block; font-size:8px; color:#fcfcfc;">SHARP</div>
+      </div>
+      <div class="col" style="text-align:center;">
+        <span class="label">px-shadow-4 (3D raise)</span>
+        <div class="px-shadow-4"
+          style="background:#0000fc; padding:16px; display:inline-block; font-size:8px; color:#fcfcfc;">3D NES</div>
+      </div>
+      <div class="col" style="text-align:center;">
+        <span class="label">px-shadow-5 (deep drop)</span>
+        <div class="px-shadow-5"
+          style="background:#d82800; padding:16px; display:inline-block; font-size:8px; color:#fcfcfc;">DEEP</div>
+      </div>
+      <div class="col" style="text-align:center;">
+        <span class="label">px-shadow-6 (neon glow)</span>
+        <div class="px-shadow-6"
+          style="background:#1a1a2e; padding:16px; display:inline-block; font-size:8px; color:#00f5ff;">GLOW</div>
+      </div>
+      <div class="col" style="text-align:center;">
+        <span class="label">px-shadow-7 (double border)</span>
+        <div class="px-shadow-7"
+          style="background:#2d2d44; padding:16px; display:inline-block; font-size:8px; color:#fcfcfc;">WINDOW</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ COLOR PALETTE ══════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 07. PIXEL COLOR PALETTE</p>
+    <div class="row">
+      <div class="col">
+        <span class="label">NES Palette</span>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#000000;" data-tip="nes-black"></div>
+          <div class="swatch" style="background:#d82800;" data-tip="nes-red"></div>
+          <div class="swatch" style="background:#fc7460;" data-tip="nes-orange"></div>
+          <div class="swatch" style="background:#fcbc3c;" data-tip="nes-yellow"></div>
+          <div class="swatch" style="background:#00b800;" data-tip="nes-green"></div>
+          <div class="swatch" style="background:#008888;" data-tip="nes-teal"></div>
+          <div class="swatch" style="background:#0000fc;" data-tip="nes-blue"></div>
+          <div class="swatch" style="background:#3cbcfc;" data-tip="nes-sky"></div>
+          <div class="swatch" style="background:#6428b4;" data-tip="nes-purple"></div>
+          <div class="swatch" style="background:#d800cc;" data-tip="nes-pink"></div>
+          <div class="swatch" style="background:#f8d8b0;" data-tip="nes-tan"></div>
+          <div class="swatch" style="background:#503000;" data-tip="nes-brown"></div>
+          <div class="swatch" style="background:#fcfcfc;" data-tip="nes-white"></div>
+        </div>
+      </div>
+      <div class="col">
+        <span class="label">Game Boy</span>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#0f380f;"></div>
+          <div class="swatch" style="background:#306230;"></div>
+          <div class="swatch" style="background:#8bac0f;"></div>
+          <div class="swatch" style="background:#9bbc0f;"></div>
+          <div class="swatch" style="background:#c4cfa1;"></div>
+        </div>
+      </div>
+      <div class="col">
+        <span class="label">Synthwave Neons</span>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#ff2d78;"></div>
+          <div class="swatch" style="background:#00f5ff;"></div>
+          <div class="swatch" style="background:#bf00ff;"></div>
+          <div class="swatch" style="background:#ffe600;"></div>
+          <div class="swatch" style="background:#39ff14;"></div>
+          <div class="swatch" style="background:#ff6b00;"></div>
+        </div>
+      </div>
+      <div class="col">
+        <span class="label">CGA</span>
+        <div class="swatch-grid">
+          <div class="swatch" style="background:#000000;"></div>
+          <div class="swatch" style="background:#aa0055;"></div>
+          <div class="swatch" style="background:#00aaaa;"></div>
+          <div class="swatch" style="background:#aaaaaa;"></div>
+          <div class="swatch" style="background:#555555;"></div>
+          <div class="swatch" style="background:#ff55ff;"></div>
+          <div class="swatch" style="background:#55ffff;"></div>
+          <div class="swatch" style="background:#ffffff;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TEXT EFFECTS ═══════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 08. PIXEL TEXT EFFECTS</p>
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div>
+        <span class="label">px-text-shadow (hard drop)</span>
+        <p class="px-text-shadow" style="font-size:16px; color:#fcfcfc;">PIXEL SHADOW TEXT</p>
+      </div>
+      <div>
+        <span class="label">px-text-shadow-neon</span>
+        <p class="px-text-shadow-neon" style="font-size:16px; color:#00f5ff;">NEON GLOW TEXT</p>
+      </div>
+      <div>
+        <span class="label">px-text-outline</span>
+        <p class="px-text-outline" style="font-size:16px; color:#ffe600;">OUTLINED TEXT</p>
+      </div>
+      <div>
+        <span class="label">px-text-rainbow</span>
+        <p class="px-text-rainbow" style="font-size:16px;">RAINBOW TEXT</p>
+      </div>
+      <div>
+        <span class="label">VT323 — terminal font</span>
+        <p class="vt323" style="font-size:32px; color:#39ff14;">C:\&gt; BOOT SEQUENCE COMPLETE_<span class="px-cursor"
+            style="font-size:24px;"></span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ BACKGROUNDS ════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 09. PIXEL BACKGROUNDS</p>
+    <div class="row">
+      <div class="col">
+        <span class="label">px-bg-grid</span>
+        <div class="px-bg-grid px-frame" style="height:80px; background-color:#0d0d0d;"></div>
+      </div>
+      <div class="col">
+        <span class="label">px-bg-checker</span>
+        <div class="px-bg-checker px-frame" style="height:80px; background-color:#2d2d44;"></div>
+      </div>
+      <div class="col">
+        <span class="label">px-bg-stars</span>
+        <div class="px-bg-stars px-frame" style="height:80px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ANIMATIONS ═════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 10. PIXEL ANIMATIONS</p>
+    <div style="display:flex; gap:48px; flex-wrap:wrap; align-items:flex-end;">
+      <div style="text-align:center;">
+        <div class="px-anim-float px-frame bg-near-black"
+          style="width:48px; height:48px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:20px;">👾</span>
+        </div>
+        <span class="label" style="margin-top:8px;">px-anim-float</span>
+      </div>
+      <div style="text-align:center;">
+        <div class="px-anim-spin px-frame bg-nes-blue"
+          style="width:48px; height:48px; display:flex; align-items:center; justify-content:center; background:#0000fc;">
+          <span style="font-size:20px;">⭐</span>
+        </div>
+        <span class="label" style="margin-top:8px;">px-anim-spin</span>
+      </div>
+      <div style="text-align:center;">
+        <span class="px-blink" style="font-size:24px; color:#ff2d78;">♥</span>
+        <span class="label" style="margin-top:8px; display:block;">px-blink</span>
+      </div>
+      <div style="text-align:center;">
+        <button id="btn-shake-demo" class="px-btn px-btn-danger px-shake" style="font-size:8px;">SHAKE ME</button>
+        <span class="label" style="margin-top:8px; display:block;">px-shake (hover)</span>
+      </div>
+      <div style="text-align:center;">
+        <button id="btn-bounce-demo" class="px-btn px-btn-gold px-bounce" style="font-size:8px;">JUMP</button>
+        <span class="label" style="margin-top:8px; display:block;">px-bounce (hover)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TOOLTIP ════════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 11. PIXEL TOOLTIP</p>
+    <div style="display:flex; gap:32px; align-items:center; flex-wrap:wrap; padding-top:32px;">
+      <span class="px-tooltip px-badge" style="color:#00f5ff; background:#1a1a2e;" data-tip="► NEON CYAN TOOLTIP">HOVER
+        ME</span>
+      <span class="px-tooltip px-badge" style="color:#39ff14; background:#0f380f;" data-tip="GAME BOY TOOLTIP">AND
+        ME</span>
+      <span class="px-tooltip px-badge" style="color:#ff2d78; background:#1a1a2e;" data-tip="HOT PINK TOOLTIP">ME
+        TOO</span>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ═════════════════════════════════ -->
+  <footer style="text-align:center; margin-top:64px; padding-top:32px; border-top:2px solid #2d2d44;">
+    <p style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#4a4a6a;">
+      PIXEL.ART CSS — MIT License<br>
+      <span style="color:#00f5ff;">image-rendering: pixelated;</span>
+    </p>
+    <p class="px-blink" style="font-family:'Press Start 2P',monospace; font-size:8px; color:#6b6b8e; margin-top:16px;">
+      INSERT COIN TO CONTINUE</p>
+  </footer>
+
+</body>
+
+</html>

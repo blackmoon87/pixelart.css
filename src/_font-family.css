@@ -1,0 +1,86 @@
+/*
+
+   PIXEL.ART — FONT FAMILIES
+   Authentic retro pixel & monospace fonts.
+   Google Fonts: Press Start 2P, VT323, Share Tech Mono, Silkscreen
+
+   Loaded via @import in _normalize.css or the main stylesheet.
+
+*/
+
+/* ── Google Fonts Import ────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&family=Silkscreen:wght@400;700&display=swap');
+
+/* ── Primary pixel font ─────────────────────── */
+/* Press Start 2P: the gold standard 8x8 pixel font */
+.px-font,
+.press-start {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  line-height: 2;
+  letter-spacing: 0.05em;
+  image-rendering: pixelated;
+}
+
+/* ── Large retro display font ───────────────── */
+/* VT323: CRT terminal / 80s computer aesthetic */
+.vt323 {
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+/* ── Tech mono ──────────────────────────────── */
+.px-mono,
+.share-tech {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* ── Silkscreen ─────────────────────────────── */
+.silkscreen {
+  font-family: 'Silkscreen', monospace;
+}
+
+/* ── Pixel sans-serif (system fallback) ──────── */
+.sans-serif {
+  font-family: 'Press Start 2P', 'Silkscreen', monospace;
+}
+
+/* ── Serif → retro terminal ─────────────────── */
+.serif {
+  font-family: 'VT323', 'Courier New', monospace;
+}
+
+/* ── Code ───────────────────────────────────── */
+code, .code {
+  font-family: 'Share Tech Mono', 'Courier New', Consolas, monospace;
+  font-size: 0.875em;
+  background: var(--px-dark-gray);
+  color: var(--px-neon-green);
+  padding: 2px 4px;
+  border: 2px solid var(--px-frame-shadow);
+}
+
+/* ── System mono ────────────────────────────── */
+.courier {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* ── Pixel font size helpers ─────────────────── */
+/* Press Start 2P looks best at multiples of 8px */
+.px-text-8  { font-size: 8px; }
+.px-text-16 { font-size: 16px; }
+.px-text-24 { font-size: 24px; }
+.px-text-32 { font-size: 32px; }
+
+/* Keep legacy class names pointing to pixel fonts */
+.helvetica,
+.avenir { font-family: 'Press Start 2P', monospace; }
+
+.athelas,
+.georgia,
+.times,
+.bodoni,
+.calisto,
+.garamond,
+.baskerville { font-family: 'VT323', monospace; }

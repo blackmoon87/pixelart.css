@@ -1,0 +1,105 @@
+/*
+
+   PIXEL.ART — COLOR VARIABLES
+   Authentic retro pixel-art palette.
+
+   Grayscale (CGA/EGA mono scale)
+   NES-inspired primaries
+   Game Boy greens
+   Synthwave neons
+   Transparencies
+
+*/
+
+:root {
+  /* ── Pixel Grayscale ───────────────────────── */
+  --px-black:        #0d0d0d;
+  --px-near-black:   #1a1a2e;
+  --px-dark-gray:    #2d2d44;
+  --px-mid-gray:     #4a4a6a;
+  --px-gray:         #6b6b8e;
+  --px-silver:       #9090b0;
+  --px-light-silver: #b8b8d0;
+  --px-moon-gray:    #d0d0e8;
+  --px-light-gray:   #e8e8f5;
+  --px-near-white:   #f5f5ff;
+  --px-white:        #ffffff;
+  --px-transparent:  transparent;
+
+  /* ── NES Classic Palette ───────────────────── */
+  --px-nes-black:    #000000;
+  --px-nes-white:    #fcfcfc;
+  --px-nes-red:      #d82800;
+  --px-nes-orange:   #fc7460;
+  --px-nes-yellow:   #fcbc3c;
+  --px-nes-green:    #00b800;
+  --px-nes-teal:     #008888;
+  --px-nes-blue:     #0000fc;
+  --px-nes-sky:      #3cbcfc;
+  --px-nes-purple:   #6428b4;
+  --px-nes-pink:     #d800cc;
+  --px-nes-tan:      #f8d8b0;
+  --px-nes-brown:    #503000;
+  --px-nes-dark-red: #880000;
+
+  /* ── Game Boy Green Palette ────────────────── */
+  --px-gb-darkest:   #0f380f;
+  --px-gb-dark:      #306230;
+  --px-gb-mid:       #8bac0f;
+  --px-gb-light:     #9bbc0f;
+  --px-gb-lightest:  #c4cfa1;
+
+  /* ── Synthwave Neons ───────────────────────── */
+  --px-neon-pink:    #ff2d78;
+  --px-neon-cyan:    #00f5ff;
+  --px-neon-purple:  #bf00ff;
+  --px-neon-yellow:  #ffe600;
+  --px-neon-green:   #39ff14;
+  --px-neon-orange:  #ff6b00;
+
+  /* ── CGA 4-Color Palettes ──────────────────── */
+  --px-cga-black:    #000000;
+  --px-cga-magenta:  #aa0055;
+  --px-cga-cyan:     #00aaaa;
+  --px-cga-white:    #aaaaaa;
+  --px-cga-hi-black: #555555;
+  --px-cga-hi-mag:   #ff55ff;
+  --px-cga-hi-cyan:  #55ffff;
+  --px-cga-hi-white: #ffffff;
+
+  /* ── Transparencies ────────────────────────── */
+  --px-black-90: rgba(13,13,13,.9);
+  --px-black-80: rgba(13,13,13,.8);
+  --px-black-70: rgba(13,13,13,.7);
+  --px-black-60: rgba(13,13,13,.6);
+  --px-black-50: rgba(13,13,13,.5);
+  --px-black-40: rgba(13,13,13,.4);
+  --px-black-30: rgba(13,13,13,.3);
+  --px-black-20: rgba(13,13,13,.2);
+  --px-black-10: rgba(13,13,13,.1);
+  --px-black-05: rgba(13,13,13,.05);
+
+  --px-white-90: rgba(255,255,255,.9);
+  --px-white-80: rgba(255,255,255,.8);
+  --px-white-70: rgba(255,255,255,.7);
+  --px-white-60: rgba(255,255,255,.6);
+  --px-white-50: rgba(255,255,255,.5);
+  --px-white-40: rgba(255,255,255,.4);
+  --px-white-30: rgba(255,255,255,.3);
+  --px-white-20: rgba(255,255,255,.2);
+  --px-white-10: rgba(255,255,255,.1);
+
+  /* ── Pixel Frame Shadow Colors ─────────────── */
+  --px-frame-light:   #ffffff;
+  --px-frame-shadow:  #000000;
+  --px-frame-mid:     #888888;
+
+  /* ── Pixel Sizes (8-px grid) ───────────────── */
+  --px-1: 1px;
+  --px-2: 2px;
+  --px-4: 4px;
+  --px-8: 8px;
+  --px-16: 16px;
+  --px-32: 32px;
+  --px-64: 64px;
+}

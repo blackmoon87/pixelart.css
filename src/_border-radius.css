@@ -1,0 +1,75 @@
+/*
+
+   PIXEL.ART — BORDER RADIUS
+   In pixel art: ALL border-radius = 0.
+   Pixel art is HARD-EDGED by definition.
+
+   The only "rounded" is a pixel-circle approximation
+   using clip-path for sprite containers.
+
+*/
+
+/* Zero radius — the pixel art standard */
+.br0 { border-radius: 0; }
+.br1 { border-radius: 0; }
+.br2 { border-radius: 0; }
+.br3 { border-radius: 0; }
+.br4 { border-radius: 0; }
+
+/* Force-override any radius */
+.px-sharp  { border-radius: 0 !important; }
+
+/* "Pill" in pixel art = just very wide — still sharp */
+.br-pill   { border-radius: 0; }
+
+/* Specific corners only — useful for pixel-art panel tabs */
+.br--bottom { border-top-left-radius: 0; border-top-right-radius: 0; }
+.br--top    { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.br--right  { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+.br--left   { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+
+/* Pixel-circle via clip-path (8x8 or 16x16 sprite containers) */
+.px-circle-8 {
+  clip-path: polygon(
+    2px 0, 6px 0,
+    8px 2px, 8px 6px,
+    6px 8px, 2px 8px,
+    0 6px, 0 2px
+  );
+}
+.px-circle-16 {
+  clip-path: polygon(
+    4px 0, 12px 0,
+    16px 4px, 16px 12px,
+    12px 16px, 4px 16px,
+    0 12px, 0 4px
+  );
+}
+
+/* Responsive aliases */
+@media (--breakpoint-not-small) {
+  .br0-ns { border-radius: 0; }
+  .br1-ns { border-radius: 0; }
+  .br2-ns { border-radius: 0; }
+  .br3-ns { border-radius: 0; }
+  .br4-ns { border-radius: 0; }
+  .br-pill-ns { border-radius: 0; }
+}
+
+@media (--breakpoint-medium) {
+  .br0-m { border-radius: 0; }
+  .br1-m { border-radius: 0; }
+  .br2-m { border-radius: 0; }
+  .br3-m { border-radius: 0; }
+  .br4-m { border-radius: 0; }
+  .br-pill-m { border-radius: 0; }
+}
+
+@media (--breakpoint-large) {
+  .br0-l { border-radius: 0; }
+  .br1-l { border-radius: 0; }
+  .br2-l { border-radius: 0; }
+  .br3-l { border-radius: 0; }
+  .br4-l { border-radius: 0; }
+  .br-pill-l { border-radius: 0; }
+}

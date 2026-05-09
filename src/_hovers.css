@@ -1,0 +1,108 @@
+/*
+
+   PIXEL.ART — HOVER EFFECTS
+   Retro pixel-art interaction effects.
+   No smooth curves — only hard pixel snaps.
+
+*/
+
+/* ── Pixel blink (like old cursor) ─────────── */
+.px-blink {
+  animation: px-blink 1s steps(1) infinite;
+}
+@keyframes px-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Pixel shake (hit animation) ────────────── */
+.px-shake:hover {
+  animation: px-shake 0.15s steps(2) 3;
+}
+@keyframes px-shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-4px); }
+  75%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Pixel bounce (jump) ─────────────────────  */
+.px-bounce:hover {
+  animation: px-bounce 0.3s steps(4) infinite;
+}
+@keyframes px-bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+/* ── Pixel press (button down) ──────────────── */
+.px-press {
+  cursor: pointer;
+  transition: none;
+}
+.px-press:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 var(--px-frame-shadow) !important;
+}
+
+/* ── Pixel glow (scanline pulse) ────────────── */
+.px-glow {
+  transition: none;
+}
+.px-glow:hover,
+.px-glow:focus {
+  box-shadow:
+    0 0 0 2px var(--px-neon-cyan),
+    0 0 0 4px var(--px-neon-purple);
+  color: var(--px-neon-cyan);
+}
+
+/* ── Dim (opacity snap, no ease) ────────────── */
+.dim { opacity: 1; }
+.dim:hover, .dim:focus { opacity: 0.5; }
+.dim:active { opacity: 0.8; }
+
+/* ── Pixel grow (snap scale, no ease) ────────── */
+.grow:hover, .grow:focus { transform: scale(1.0625); image-rendering: pixelated; }
+.grow:active             { transform: scale(0.9375); }
+.grow-large:hover        { transform: scale(1.125); image-rendering: pixelated; }
+
+/* ── Pointer ─────────────────────────────────── */
+.pointer:hover { cursor: pointer; }
+
+/* ── Hide child / reveal ─────────────────────── */
+.hide-child .child { opacity: 0; }
+.hide-child:hover  .child,
+.hide-child:focus  .child,
+.hide-child:active .child { opacity: 1; }
+
+/* ── Underline hover ─────────────────────────── */
+.underline-hover:hover,
+.underline-hover:focus { text-decoration: underline; }
+
+/* ── BG animate ─────────────────────────────── */
+.bg-animate,
+.bg-animate:hover,
+.bg-animate:focus { transition: background-color 0s; }
+
+/* ── Shadow hover (pixel snap) ──────────────── */
+.shadow-hover { cursor: pointer; position: relative; }
+.shadow-hover:hover {
+  box-shadow: 4px 4px 0 0 var(--px-frame-shadow);
+}
+
+/* ── Pixel scan-line hover overlay ──────────── */
+.px-scanline-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 1px,
+    rgba(0,0,0,0.25) 1px, rgba(0,0,0,0.25) 2px
+  );
+  pointer-events: none;
+  opacity: 0;
+}
+.px-scanline-hover:hover::after { opacity: 1; }

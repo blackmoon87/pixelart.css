@@ -1,0 +1,508 @@
+/*
+
+   PIXEL.ART — PIXEL FRAMES
+   The core of the library. Professional pixel-art UI components.
+
+   ┌─────────────────┐
+   │  px-frame        │  Base frame
+   │  px-window       │  OS window with title bar
+   │  px-panel        │  Flat bordered panel
+   │  px-badge        │  Inline badge/tag
+   │  px-btn          │  3D pixel button
+   │  px-progress     │  Retro progress bar
+   │  px-dialog       │  Modal dialog box
+   │  px-scanline     │  CRT scanline overlay
+   │  px-sprite       │  Sprite/image container
+   │  px-cursor       │  Pixel cursor indicator
+   └─────────────────┘
+
+*/
+
+/* ═══════════════════════════════════════════════
+   BASE FRAME — the 9-slice pixel border
+   ═══════════════════════════════════════════════ */
+
+.px-frame {
+  border-radius: 0;
+  border: 4px solid var(--px-frame-shadow);
+  image-rendering: pixelated;
+  position: relative;
+  box-shadow:
+    inset  2px  2px 0 0 var(--px-frame-light),
+    inset -2px -2px 0 0 var(--px-frame-mid),
+    4px 4px 0 0 var(--px-frame-shadow);
+}
+
+/* Light variant */
+.px-frame-light {
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow:
+    inset  2px  2px 0 0 rgba(255,255,255,0.8),
+    inset -2px -2px 0 0 rgba(0,0,0,0.4),
+    4px 4px 0 0 var(--px-frame-shadow);
+}
+
+/* Inset / sunken variant */
+.px-frame-inset {
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow:
+    inset -2px -2px 0 0 rgba(255,255,255,0.5),
+    inset  2px  2px 0 0 rgba(0,0,0,0.6);
+}
+
+/* Neon variant */
+.px-frame-neon {
+  border: 2px solid var(--px-neon-cyan);
+  box-shadow:
+    0 0 0 2px var(--px-neon-cyan),
+    0 0 0 4px var(--px-neon-purple),
+    inset 0 0 0 1px var(--px-neon-cyan),
+    4px 4px 0 0 var(--px-neon-pink);
+}
+
+/* Game Boy variant */
+.px-frame-gb {
+  border: 4px solid var(--px-gb-darkest);
+  background: var(--px-gb-light);
+  box-shadow:
+    inset  2px  2px 0 0 var(--px-gb-lightest),
+    inset -2px -2px 0 0 var(--px-gb-dark),
+    4px 4px 0 0 var(--px-gb-darkest);
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL WINDOW (retro OS dialog)
+   ═══════════════════════════════════════════════ */
+
+.px-window {
+  border-radius: 0;
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow:
+    inset  2px  2px 0 0 var(--px-frame-light),
+    inset -2px -2px 0 0 var(--px-frame-mid),
+    4px 4px 0 0 var(--px-frame-shadow);
+  background: var(--px-light-gray);
+  font-family: 'Press Start 2P', monospace;
+}
+
+.px-window-title {
+  background: var(--px-nes-blue);
+  color: var(--px-white);
+  padding: 4px 8px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.4);
+}
+
+.px-window-title-dark {
+  background: var(--px-dark-gray);
+  color: var(--px-silver);
+}
+
+.px-window-body {
+  padding: 8px;
+}
+
+.px-window-btn {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: var(--px-light-gray);
+  border: 2px solid var(--px-frame-shadow);
+  box-shadow:
+    inset  1px  1px 0 0 var(--px-frame-light),
+    inset -1px -1px 0 0 var(--px-frame-shadow);
+  cursor: pointer;
+  margin-left: 4px;
+  font-size: 6px;
+  line-height: 8px;
+  text-align: center;
+}
+
+.px-window-btn:active {
+  box-shadow:
+    inset  1px  1px 0 0 var(--px-frame-shadow),
+    inset -1px -1px 0 0 var(--px-frame-light);
+  transform: translate(1px, 1px);
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL BUTTONS
+   ═══════════════════════════════════════════════ */
+
+.px-btn {
+  display: inline-block;
+  border-radius: 0;
+  border: 2px solid var(--px-frame-shadow);
+  padding: 8px 16px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  image-rendering: pixelated;
+  box-shadow:
+    inset  2px  2px 0 0 rgba(255,255,255,0.5),
+    inset -2px -2px 0 0 rgba(0,0,0,0.4),
+    4px 4px 0 0 var(--px-frame-shadow);
+  transition: none;
+}
+
+.px-btn:active {
+  box-shadow:
+    inset  2px  2px 0 0 rgba(0,0,0,0.4),
+    inset -2px -2px 0 0 rgba(255,255,255,0.3);
+  transform: translate(2px, 2px);
+}
+
+/* Button color variants */
+.px-btn-primary {
+  background: var(--px-nes-blue);
+  color: var(--px-white);
+  border-color: var(--px-near-black);
+}
+.px-btn-danger {
+  background: var(--px-nes-red);
+  color: var(--px-white);
+  border-color: var(--px-near-black);
+}
+.px-btn-success {
+  background: var(--px-nes-green);
+  color: var(--px-white);
+  border-color: var(--px-near-black);
+}
+.px-btn-neon {
+  background: var(--px-near-black);
+  color: var(--px-neon-cyan);
+  border-color: var(--px-neon-cyan);
+  box-shadow:
+    0 0 0 2px var(--px-neon-cyan),
+    4px 4px 0 0 var(--px-neon-purple);
+}
+.px-btn-neon:active {
+  box-shadow: 0 0 0 2px var(--px-neon-cyan);
+  transform: translate(2px, 2px);
+}
+.px-btn-gold {
+  background: var(--px-nes-yellow);
+  color: var(--px-near-black);
+  border-color: var(--px-nes-brown);
+}
+.px-btn-gb {
+  background: var(--px-gb-light);
+  color: var(--px-gb-darkest);
+  border-color: var(--px-gb-darkest);
+  box-shadow:
+    inset 2px 2px 0 0 var(--px-gb-lightest),
+    inset -2px -2px 0 0 var(--px-gb-dark),
+    4px 4px 0 0 var(--px-gb-darkest);
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL BADGE / TAG
+   ═══════════════════════════════════════════════ */
+
+.px-badge {
+  display: inline-block;
+  border-radius: 0;
+  border: 2px solid currentColor;
+  padding: 2px 6px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  line-height: 2;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0 0 currentColor;
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL PROGRESS BAR
+   ═══════════════════════════════════════════════ */
+
+.px-progress {
+  display: block;
+  width: 100%;
+  height: 16px;
+  background: var(--px-near-black);
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow:
+    inset 2px 2px 0 0 rgba(0,0,0,0.6),
+    inset -2px -2px 0 0 rgba(255,255,255,0.1);
+  border-radius: 0;
+  overflow: hidden;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Chrome/Safari progress fill */
+.px-progress::-webkit-progress-bar { background: var(--px-near-black); }
+.px-progress::-webkit-progress-value {
+  background: var(--px-nes-green);
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,0.4);
+}
+/* Firefox */
+.px-progress::-moz-progress-bar {
+  background: var(--px-nes-green);
+}
+
+/* Blue */
+.px-progress.px-progress-fill-blue::-webkit-progress-value { background: var(--px-nes-sky); }
+.px-progress.px-progress-fill-blue::-moz-progress-bar      { background: var(--px-nes-sky); }
+/* Red */
+.px-progress.px-progress-fill-red::-webkit-progress-value  { background: var(--px-nes-red); }
+.px-progress.px-progress-fill-red::-moz-progress-bar       { background: var(--px-nes-red); }
+/* Yellow */
+.px-progress.px-progress-fill-yellow::-webkit-progress-value { background: var(--px-nes-yellow); }
+.px-progress.px-progress-fill-yellow::-moz-progress-bar      { background: var(--px-nes-yellow); }
+
+/* Div-based fills (still supported) */
+.px-progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--px-nes-green);
+  box-shadow: inset 0 2px 0 0 rgba(255,255,255,0.4);
+  image-rendering: pixelated;
+  transition: none;
+}
+
+.px-progress-fill-blue   { background: var(--px-nes-sky); }
+.px-progress-fill-red    { background: var(--px-nes-red); }
+.px-progress-fill-yellow { background: var(--px-nes-yellow); }
+.px-progress-fill-neon   {
+  background: linear-gradient(90deg,
+    var(--px-neon-pink) 0%,
+    var(--px-neon-purple) 50%,
+    var(--px-neon-cyan) 100%
+  );
+  background-size: 200% 100%;
+  animation: px-progress-anim 1s steps(8) infinite;
+}
+@keyframes px-progress-anim {
+  0%   { background-position: 200% 0; }
+  100% { background-position: 0% 0; }
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL PANEL
+   ═══════════════════════════════════════════════ */
+
+.px-panel {
+  border: 4px solid var(--px-frame-shadow);
+  border-radius: 0;
+  background: var(--px-near-black);
+  padding: 16px;
+}
+
+.px-panel-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--px-neon-cyan);
+  border-bottom: 2px solid var(--px-neon-cyan);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ═══════════════════════════════════════════════
+   CRT SCANLINE OVERLAY
+   ═══════════════════════════════════════════════ */
+
+.px-scanline {
+  position: relative;
+}
+.px-scanline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,0,0,0.15) 2px,
+    rgba(0,0,0,0.15) 4px
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.px-crt {
+  position: relative;
+  animation: px-crt-flicker 8s steps(1) infinite;
+}
+@keyframes px-crt-flicker {
+  0%, 98%, 100% { opacity: 1; }
+  99%            { opacity: 0.92; }
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL SPRITE CONTAINER
+   ═══════════════════════════════════════════════ */
+
+.px-sprite {
+  display: inline-block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.px-sprite-sm  { width: 16px;  height: 16px; }
+.px-sprite-md  { width: 32px;  height: 32px; }
+.px-sprite-lg  { width: 64px;  height: 64px; }
+.px-sprite-xl  { width: 128px; height: 128px; }
+
+/* ═══════════════════════════════════════════════
+   PIXEL DIVIDER
+   ═══════════════════════════════════════════════ */
+
+.px-divider {
+  border: none;
+  border-top: 4px solid var(--px-frame-shadow);
+  box-shadow: 0 2px 0 0 var(--px-frame-mid);
+  margin: 16px 0;
+}
+.px-divider-neon {
+  border-top: 2px solid var(--px-neon-cyan);
+  box-shadow: 0 2px 0 0 var(--px-neon-purple);
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL TOOLTIP
+   ═══════════════════════════════════════════════ */
+
+.px-tooltip {
+  position: relative;
+  cursor: help;
+}
+.px-tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--px-near-black);
+  color: var(--px-neon-cyan);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  padding: 4px 8px;
+  border: 2px solid var(--px-neon-cyan);
+  box-shadow: 4px 4px 0 0 var(--px-frame-shadow);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+.px-tooltip:hover::after { opacity: 1; }
+
+/* ═══════════════════════════════════════════════
+   PIXEL CURSOR / CARET
+   ═══════════════════════════════════════════════ */
+
+.px-cursor::after {
+  content: '█';
+  display: inline-block;
+  color: inherit;
+  animation: px-blink 1s steps(1) infinite;
+  margin-left: 2px;
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL GRID BACKGROUND
+   ═══════════════════════════════════════════════ */
+
+.px-bg-grid {
+  background-image:
+    linear-gradient(var(--px-dark-gray) 1px, transparent 1px),
+    linear-gradient(90deg, var(--px-dark-gray) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.px-bg-checker {
+  background-image:
+    linear-gradient(45deg, var(--px-dark-gray) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--px-dark-gray) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--px-dark-gray) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--px-dark-gray) 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+}
+
+.px-bg-stars {
+  background-color: var(--px-near-black);
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, white 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 70%, white 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 20%, white 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 60%, rgba(255,255,255,0.7) 0%, transparent 100%);
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL ANIMATIONS
+   ═══════════════════════════════════════════════ */
+
+.px-anim-spin {
+  animation: px-spin 1s steps(8) infinite;
+}
+@keyframes px-spin {
+  to { transform: rotate(360deg); }
+}
+
+.px-anim-float {
+  animation: px-float 2s steps(4) infinite;
+}
+@keyframes px-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.px-anim-march {
+  animation: px-march 0.5s steps(4) infinite;
+}
+@keyframes px-march {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(4px); }
+}
+
+/* ═══════════════════════════════════════════════
+   PIXEL TEXT EFFECTS
+   ═══════════════════════════════════════════════ */
+
+.px-text-shadow {
+  text-shadow: 2px 2px 0 var(--px-frame-shadow);
+}
+.px-text-shadow-neon {
+  text-shadow:
+    0 0 4px var(--px-neon-cyan),
+    2px 2px 0 var(--px-neon-purple);
+}
+.px-text-outline {
+  text-shadow:
+    -2px -2px 0 var(--px-frame-shadow),
+     2px -2px 0 var(--px-frame-shadow),
+    -2px  2px 0 var(--px-frame-shadow),
+     2px  2px 0 var(--px-frame-shadow);
+}
+.px-text-rainbow {
+  background: linear-gradient(90deg,
+    var(--px-nes-red),
+    var(--px-nes-yellow),
+    var(--px-nes-green),
+    var(--px-nes-sky),
+    var(--px-nes-purple)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Utility: force pixelated rendering ──────── */
+.px-render {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}

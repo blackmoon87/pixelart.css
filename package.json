@@ -1,0 +1,53 @@
+{
+  "name": "@blue87moon/pixelart-css",
+  "version": "1.0.0",
+  "description": "Professional pixel-art CSS frame styles",
+  "author": "pixelart-css",
+  "style": "css/pixelart.min.css",
+  "main": "css/pixelart.css",
+  "homepage": "https://github.com/blackmoon87/pixelart.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackmoon87/pixelart.css.git"
+  },
+  "files": [
+    "css",
+    "src"
+  ],
+  "keywords": [
+    "css",
+    "pixel-art",
+    "retro",
+    "nes",
+    "game-boy",
+    "functional css",
+    "design",
+    "responsive"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "copy-files": "^0.1.0",
+    "immutable-css-cli": "^1.1.1",
+    "normalize.css": "^8.0.0",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.0",
+    "postcss-custom-media": "^10.0.6",
+    "postcss-minify": "^1.1.0",
+    "watch": "^1.0.2"
+  },
+  "contributors": [
+    {
+      "name": "blackmoon87",
+      "url": "https://github.com/blackmoon87"
+    }
+  ],
+  "scripts": {
+    "start": "npm run build:watch",
+    "mutations": "immutable-css src/pixelart.css --strict",
+    "build": "npm run build:css && npm run build:minify",
+    "build:css": "postcss src/pixelart.css -o css/pixelart.css",
+    "build:minify": "postcss src/pixelart.css --use postcss-minify -o css/pixelart.min.css",
+    "build:watch": "postcss src/pixelart.css -o css/pixelart.css --watch"
+  }
+}

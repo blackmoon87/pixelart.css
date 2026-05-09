@@ -1,0 +1,11 @@
+/*
+
+   IMAGES
+   Docs: https://github.com/blackmoon87/pixelart.css/docs/elements/images/
+
+*/
+
+/* Responsive images! */
+
+img { max-width: 100%; }
+

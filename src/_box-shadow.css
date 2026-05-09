@@ -1,0 +1,94 @@
+/*
+
+   PIXEL.ART — BOX-SHADOW FRAMES
+   Authentic pixel-art borders using multi-step box-shadow.
+   No blur. No rounded corners. Pure pixel power.
+
+   Classes:
+     .px-shadow-1   = subtle 2px pixel outline
+     .px-shadow-2   = classic 4px hard frame
+     .px-shadow-3   = inset sunken frame (pressed)
+     .px-shadow-4   = 3D raised button shadow
+     .px-shadow-5   = deep 8px drop shadow
+     .px-shadow-6   = neon glow frame
+     .px-shadow-7   = double border (windowed look)
+
+*/
+
+/* ── 2px hard pixel outline ─────────────────── */
+.px-shadow-1 {
+  box-shadow:
+    2px 0   0 0 #000,
+    0   2px 0 0 #000,
+   -2px 0   0 0 #000,
+    0  -2px 0 0 #000;
+}
+
+/* ── Classic 4px pixel frame (NES window) ───── */
+.px-shadow-2 {
+  box-shadow:
+    -4px -4px 0 0 var(--px-frame-light),
+     4px  4px 0 0 var(--px-frame-shadow),
+    -4px  4px 0 0 var(--px-frame-shadow),
+     4px -4px 0 0 var(--px-frame-light);
+}
+
+/* ── Inset sunken frame (pressed / depressed) ─ */
+.px-shadow-3 {
+  box-shadow:
+    inset -2px -2px 0 0 var(--px-frame-light),
+    inset  2px  2px 0 0 var(--px-frame-shadow);
+}
+
+/* ── 3D raised button shadow ────────────────── */
+.px-shadow-4 {
+  box-shadow:
+    inset  2px  2px 0 0 var(--px-frame-light),
+    inset -2px -2px 0 0 var(--px-frame-shadow),
+     4px   4px 0 0 var(--px-frame-shadow);
+}
+
+/* ── Deep 8px drop shadow ───────────────────── */
+.px-shadow-5 {
+  box-shadow:
+    8px  8px 0 0 var(--px-frame-shadow);
+}
+
+/* ── Neon glow frame (synthwave) ────────────── */
+.px-shadow-6 {
+  box-shadow:
+     0    0 0 2px var(--px-neon-cyan),
+     0    0 0 4px var(--px-neon-purple),
+     4px  4px 0 0 var(--px-neon-pink);
+}
+
+/* ── Double border windowed look ────────────── */
+.px-shadow-7 {
+  box-shadow:
+    0 0 0 2px var(--px-frame-shadow),
+    0 0 0 4px var(--px-frame-mid),
+    0 0 0 6px var(--px-frame-shadow);
+}
+
+/* ── Active / clicked states ────────────────── */
+.px-shadow-4:active {
+  box-shadow:
+    inset  2px  2px 0 0 var(--px-frame-shadow),
+    inset -2px -2px 0 0 var(--px-frame-light);
+  transform: translate(2px, 2px);
+}
+
+/* ── Color-keyed neon shadows ───────────────── */
+.px-shadow-neon-pink   { box-shadow: 4px 4px 0 0 var(--px-neon-pink),   0 0 0 2px var(--px-neon-pink); }
+.px-shadow-neon-cyan   { box-shadow: 4px 4px 0 0 var(--px-neon-cyan),   0 0 0 2px var(--px-neon-cyan); }
+.px-shadow-neon-green  { box-shadow: 4px 4px 0 0 var(--px-neon-green),  0 0 0 2px var(--px-neon-green); }
+.px-shadow-neon-yellow { box-shadow: 4px 4px 0 0 var(--px-neon-yellow), 0 0 0 2px var(--px-neon-yellow); }
+.px-shadow-nes-red     { box-shadow: 4px 4px 0 0 var(--px-nes-red),     0 0 0 2px var(--px-nes-red); }
+.px-shadow-nes-blue    { box-shadow: 4px 4px 0 0 var(--px-nes-blue),    0 0 0 2px var(--px-nes-blue); }
+
+/* ── Legacy PIXELART.CSS .shadow-N aliases ──────── */
+.shadow-1 { box-shadow: 2px 2px 0 0 rgba(0,0,0,0.8); }
+.shadow-2 { box-shadow: 4px 4px 0 0 rgba(0,0,0,0.8); }
+.shadow-3 { box-shadow: inset 2px 2px 0 0 rgba(255,255,255,.5), inset -2px -2px 0 0 rgba(0,0,0,.8); }
+.shadow-4 { box-shadow: 4px 4px 0 0 rgba(0,0,0,1); }
+.shadow-5 { box-shadow: 8px 8px 0 0 rgba(0,0,0,1); }
