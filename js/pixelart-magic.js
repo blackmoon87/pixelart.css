@@ -74,6 +74,11 @@
       selector: 'kbd:not([class*="px-kbd"])',
       classes: ['px-kbd']
     },
+    // Dialog -> .px-modal
+    {
+      selector: 'dialog:not([class*="px-modal"])',
+      classes: ['px-modal']
+    },
     // Images -> .px-render
     {
       selector: 'img:not([class*="px-render"]):not([class*="px-sprite"])',

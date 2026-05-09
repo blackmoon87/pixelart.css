@@ -435,6 +435,35 @@ function switchTab(e,id){
 &lt;div class="px-border-dashed-neon"&gt;dashed neon&lt;/div&gt;
 &lt;div class="px-border-top"&gt;top only&lt;/div&gt;</pre>
 
+<!-- 17 MODALS & ALERTS -->
+<h2>// 17. MODALS & ALERTS</h2>
+<div style="display:flex;flex-direction:column;gap:12px;max-width:480px">
+  <div class="px-alert px-alert-danger">Connection to server lost. Retrying...</div>
+  <div class="px-alert px-alert-success">Item "Iron Sword" acquired!</div>
+  <div class="px-alert px-alert-warning">Warning: HP is running low!</div>
+
+  <div style="margin-top:24px;">
+    <button class="px-btn px-btn-primary" onclick="document.getElementById('demo-modal').showModal()">OPEN NATIVE DIALOG</button>
+  </div>
+
+  <dialog id="demo-modal" class="px-modal">
+    <h2>SYSTEM MESSAGE</h2>
+    <p style="margin-bottom:24px;">Do you want to save your game progress?</p>
+    <div style="display:flex; justify-content:space-between;">
+      <button class="px-btn" onclick="this.closest('dialog').close()">CANCEL</button>
+      <button class="px-btn px-btn-success" onclick="this.closest('dialog').close()">SAVE</button>
+    </div>
+  </dialog>
+</div>
+<pre>&lt;div class="px-alert px-alert-danger"&gt;Error!&lt;/div&gt;
+
+&lt;!-- Open via JS: dialogElement.showModal() --&gt;
+&lt;dialog class="px-modal"&gt;
+  &lt;h2&gt;Title&lt;/h2&gt;
+  &lt;p&gt;Message&lt;/p&gt;
+  &lt;button onclick="this.closest('dialog').close()"&gt;CLOSE&lt;/button&gt;
+&lt;/dialog&gt;</pre>
+
 <!-- FOOTER -->
 <footer style="text-align:center;margin-top:64px;padding-top:32px;border-top:2px solid #2d2d44">
   <p style="font-size:11px;color:#4a4a6a">

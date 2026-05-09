@@ -5394,6 +5394,119 @@ code, .code {
   border-bottom-color: var(--px-neon-pink);
   background: var(--px-near-black);
 }
+/* ═══════════════════════════════════════════════
+   PIXELART.CSS — MODALS & ALERTS
+   ═══════════════════════════════════════════════ */
+/* ── Alerts & Notifications ─────────────────── */
+.px-alert {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  margin-bottom: 16px;
+  background: var(--px-dark-gray);
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow: 
+    inset 2px 2px 0 0 rgba(255, 255, 255, 0.2),
+    inset -2px -2px 0 0 rgba(0, 0, 0, 0.4),
+    4px 4px 0 0 var(--px-frame-shadow);
+  color: var(--px-white);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 16px;
+}
+.px-alert::before {
+  content: '!';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+  background: var(--px-near-black);
+  border: 2px solid var(--px-frame-shadow);
+  color: var(--px-white);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+}
+/* Alert Variants */
+.px-alert-success {
+  background: var(--px-nes-green);
+  border-color: var(--px-near-black);
+}
+.px-alert-success::before {
+  content: '✓';
+  color: var(--px-neon-green);
+}
+.px-alert-danger {
+  background: var(--px-nes-red);
+  border-color: var(--px-near-black);
+}
+.px-alert-danger::before {
+  content: 'X';
+  color: var(--px-neon-pink);
+}
+.px-alert-warning {
+  background: var(--px-nes-yellow);
+  color: var(--px-near-black);
+  border-color: var(--px-near-black);
+}
+.px-alert-warning::before {
+  content: '!';
+  color: var(--px-neon-yellow);
+}
+/* ── Modals / Dialogs ───────────────────────── */
+.px-modal, 
+dialog[open].px-modal,
+dialog[open][data-pixelart="true"] {
+  display: block; /* Support for older browsers / generic divs */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 24px;
+  z-index: 9999;
+  
+  /* Inherit window styling */
+  background: var(--px-dark-gray);
+  border: 4px solid var(--px-frame-shadow);
+  box-shadow: 
+    inset  2px  2px 0 0 var(--px-frame-light),
+    inset -2px -2px 0 0 var(--px-frame-dark),
+    8px 8px 0 0 rgba(0, 0, 0, 0.5);
+    
+  color: var(--px-light-silver);
+  font-family: 'Share Tech Mono', monospace;
+  max-width: 90vw;
+  width: 400px;
+}
+/* Modal Title */
+.px-modal h2, .px-modal .px-modal-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--px-near-black);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  color: var(--px-white);
+}
+/* Native Dialog Backdrop */
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  /* Optional: Checkerboard pattern */
+  /* background-image: conic-gradient(rgba(255,255,255,0.05) 90deg, transparent 90deg, transparent 180deg, rgba(255,255,255,0.05) 180deg, rgba(255,255,255,0.05) 270deg, transparent 270deg); */
+  /* background-size: 4px 4px; */
+}
+/* Polyfill Overlay for non-native modals */
+.px-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9998;
+}
 /* Variables */
 /* Importing here will allow you to override any variables in the modules */
 /*
