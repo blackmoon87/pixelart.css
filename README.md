@@ -4,7 +4,18 @@
 
 > `image-rendering: pixelated;`
 
-Build retro pixel-art UIs without writing CSS. A functional atomic CSS library — fully rebranded with authentic NES, Game Boy, CGA, and Synthwave neon aesthetics.
+[![npm](https://img.shields.io/npm/v/@blue87moon/pixelart-css?color=ff2d78&label=npm&style=flat-square)](https://www.npmjs.com/package/@blue87moon/pixelart-css)
+[![License: MIT](https://img.shields.io/badge/license-MIT-00f5ff?style=flat-square)](./license)
+[![GitHub Pages](https://img.shields.io/badge/demo-live-39ff14?style=flat-square)](https://blackmoon87.github.io/pixelart.css/)
+
+---
+
+## 🕹️ Live Demo
+
+| Page | Link |
+|------|------|
+| **Showcase** | [blackmoon87.github.io/pixelart.css](https://blackmoon87.github.io/pixelart.css/) |
+| **Usage Guide** | [blackmoon87.github.io/pixelart.css/usage.html](https://blackmoon87.github.io/pixelart.css/usage.html) |
 
 ---
 
@@ -29,7 +40,7 @@ Build retro pixel-art UIs without writing CSS. A functional atomic CSS library �
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://github.com/blackmoon87/pixelart.css/raw/main/css/pixelart.min.css">
+<link rel="stylesheet" href="https://raw.githubusercontent.com/blackmoon87/pixelart.css/main/css/pixelart.min.css">
 ```
 
 ### npm
@@ -100,6 +111,14 @@ Output: `css/pixelart.css` and `css/pixelart.min.css`
 
 ---
 
+## Support
+
+If you find this useful, consider buying me a coffee ☕
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/black.moon)
+
+---
+
 ## License
 
-MIT © [blackmoon87](https://github.com/blackmoon87)
+MIT © [pixelart-css](https://github.com/blackmoon87/pixelart.css)
