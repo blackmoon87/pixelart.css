@@ -444,6 +444,43 @@
     </div>
   </div>
 
+  <!-- ══ MAGIC SCRIPT ════════════════════════════ -->
+  <div class="showcase-section">
+    <p class="showcase-title">// 12. 🪄 MAGIC MODE (ZERO-CODE)</p>
+    <div style="background:#1a1a2e; padding:24px; border:4px solid #333;">
+      <p style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#9090b0; margin-bottom:16px;">
+        The elements below are standard HTML tags (&lt;button&gt;, &lt;input&gt;, &lt;h2&gt;).<br>
+        They are automatically transformed because their container has <code>data-pixelart="true"</code>.
+      </p>
+      
+      <!-- MAGIC CONTAINER START -->
+      <div data-pixelart="true" style="display:flex; flex-direction:column; gap:16px; background:#0d0d0d; padding:24px;">
+        <h2>Standard H2 Tag</h2>
+        <p>Standard P tag (inherits font from container or body)</p>
+        
+        <div style="display:flex; gap:16px;">
+          <button>Standard Button</button>
+          <input type="text" placeholder="Standard Input">
+        </div>
+        
+        <label>
+          <input type="checkbox"> Standard Checkbox
+        </label>
+        
+        <label>
+          <input type="radio" name="magic-radio" checked> Standard Radio
+        </label>
+        
+        <progress value="80" max="100"></progress>
+        
+        <hr>
+        
+        <a href="#">Standard Link</a>
+      </div>
+      <!-- MAGIC CONTAINER END -->
+    </div>
+  </div>
+
   <!-- ══ FOOTER ═════════════════════════════════ -->
   <footer style="text-align:center; margin-top:64px; padding-top:32px; border-top:2px solid #2d2d44;">
     <p style="font-family:'Share Tech Mono',monospace; font-size:12px; color:#4a4a6a;">
@@ -454,6 +491,7 @@
       INSERT COIN TO CONTINUE</p>
   </footer>
 
+  <script src="js/pixelart-magic.js"></script>
 </body>
 
 </html>
