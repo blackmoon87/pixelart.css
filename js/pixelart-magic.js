@@ -100,6 +100,49 @@
     apply: function(container) {
       if (!container) return;
       
+      // Inline style overrides — these beat ANY stylesheet rule (even !important)
+      // because inline !important > stylesheet !important. Platform-agnostic.
+      const forceStyles = {
+        'px-btn': {
+          borderRadius: '0',
+          border: '2px solid #111',
+          fontFamily: "'Press Start 2P', monospace",
+          fontSize: '8px',
+          boxShadow: 'inset 2px 2px 0 0 rgba(255,255,255,0.5), inset -2px -2px 0 0 rgba(0,0,0,0.5), 4px 4px 0 0 #111',
+          cursor: 'pointer',
+          imageRendering: 'pixelated',
+          padding: '8px 16px',
+          textDecoration: 'none',
+          lineHeight: '1'
+        },
+        'px-input': {
+          borderRadius: '0',
+          border: '4px solid #111',
+          fontFamily: "'Share Tech Mono', monospace",
+          boxShadow: 'inset 4px 4px 0 0 #000',
+          outline: 'none'
+        },
+        'px-select': {
+          borderRadius: '0',
+          border: '4px solid #111',
+          fontFamily: "'Press Start 2P', monospace",
+          boxShadow: 'inset 2px 2px 0 0 rgba(255,255,255,0.3), inset -2px -2px 0 0 rgba(0,0,0,0.3)'
+        },
+        'px-checkbox': {
+          borderRadius: '0',
+          border: '3px solid #111',
+          boxShadow: 'inset 2px 2px 0 0 #000'
+        },
+        'px-radio': {
+          borderRadius: '0',
+          border: '3px solid #111',
+          boxShadow: 'inset 2px 2px 0 0 #000'
+        },
+        'px-render': {
+          imageRendering: 'pixelated'
+        }
+      };
+
       try {
         container.style.imageRendering = 'pixelated';
         let totalConverted = 0;
@@ -110,13 +153,20 @@
           if (elements.length > 0) {
             convertedDetails[mapping.classes.join('.')] = elements.length;
             elements.forEach(el => {
-              // Strip potentially interfering inline styles from standard elements
-              if (el.tagName === 'BUTTON' || el.tagName === 'INPUT') {
-                el.style.borderRadius = '';
-                el.style.border = '';
-                el.style.background = '';
-              }
               el.classList.add(...mapping.classes);
+              
+              // Apply inline style overrides for the primary class
+              const primaryClass = mapping.classes[0];
+              if (forceStyles[primaryClass]) {
+                Object.entries(forceStyles[primaryClass]).forEach(([prop, val]) => {
+                  el.style.setProperty(
+                    prop.replace(/([A-Z])/g, '-$1').toLowerCase(),
+                    val,
+                    'important'
+                  );
+                });
+              }
+              
               totalConverted++;
             });
           }
@@ -125,7 +175,7 @@
         if (totalConverted > 0) {
           console.log(`[PixelArt CSS] 🪄 Magic applied. Converted ${totalConverted} items.`, convertedDetails);
         } else {
-          console.warn(`[PixelArt CSS] ⚠️ Magic ran, but 0 items were converted. (Are elements loaded dynamically later?)`);
+          console.warn(`[PixelArt CSS] ⚠️ Magic ran, but 0 items were converted.`);
         }
         
       } catch (error) {
