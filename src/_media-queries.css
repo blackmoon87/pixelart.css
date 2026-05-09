@@ -12,19 +12,19 @@
 
   @media (--breakpoint-not-small) {
     .medium-and-larger-specific-style {
-      background-color: red;
+      background-color: red !important;
     }
   }
 
   @media (--breakpoint-medium) {
     .medium-screen-specific-style {
-      background-color: red;
+      background-color: red !important;
     }
   }
 
   @media (--breakpoint-large) {
     .large-and-larger-screen-specific-style {
-      background-color: red;
+      background-color: red !important;
     }
   }
 

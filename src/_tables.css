@@ -11,25 +11,25 @@
 }
 
 .striped--light-silver:nth-child(odd) {
-  background-color: var(--light-silver);
+  background-color: var(--light-silver) !important;
 }
 
 .striped--moon-gray:nth-child(odd) {
-  background-color: var(--moon-gray);
+  background-color: var(--moon-gray) !important;
 }
 
 .striped--light-gray:nth-child(odd) {
-  background-color: var(--light-gray);
+  background-color: var(--light-gray) !important;
 }
 
 .striped--near-white:nth-child(odd) {
-  background-color: var(--near-white);
+  background-color: var(--near-white) !important;
 }
 
 .stripe-light:nth-child(odd) {
-  background-color: var(--white-10);
+  background-color: var(--white-10) !important;
 }
 
 .stripe-dark:nth-child(odd) {
-  background-color: var(--black-10);
+  background-color: var(--black-10) !important;
 }

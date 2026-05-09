@@ -21,7 +21,7 @@
     2px 0   0 0 #000,
     0   2px 0 0 #000,
    -2px 0   0 0 #000,
-    0  -2px 0 0 #000;
+    0  -2px 0 0 #000 !important;
 }
 
 /* ── Classic 4px pixel frame (NES window) ───── */
@@ -30,14 +30,14 @@
     -4px -4px 0 0 var(--px-frame-light),
      4px  4px 0 0 var(--px-frame-shadow),
     -4px  4px 0 0 var(--px-frame-shadow),
-     4px -4px 0 0 var(--px-frame-light);
+     4px -4px 0 0 var(--px-frame-light) !important;
 }
 
 /* ── Inset sunken frame (pressed / depressed) ─ */
 .px-shadow-3 {
   box-shadow:
     inset -2px -2px 0 0 var(--px-frame-light),
-    inset  2px  2px 0 0 var(--px-frame-shadow);
+    inset  2px  2px 0 0 var(--px-frame-shadow) !important;
 }
 
 /* ── 3D raised button shadow ────────────────── */
@@ -45,13 +45,13 @@
   box-shadow:
     inset  2px  2px 0 0 var(--px-frame-light),
     inset -2px -2px 0 0 var(--px-frame-shadow),
-     4px   4px 0 0 var(--px-frame-shadow);
+     4px   4px 0 0 var(--px-frame-shadow) !important;
 }
 
 /* ── Deep 8px drop shadow ───────────────────── */
 .px-shadow-5 {
   box-shadow:
-    8px  8px 0 0 var(--px-frame-shadow);
+    8px  8px 0 0 var(--px-frame-shadow) !important;
 }
 
 /* ── Neon glow frame (synthwave) ────────────── */
@@ -59,7 +59,7 @@
   box-shadow:
      0    0 0 2px var(--px-neon-cyan),
      0    0 0 4px var(--px-neon-purple),
-     4px  4px 0 0 var(--px-neon-pink);
+     4px  4px 0 0 var(--px-neon-pink) !important;
 }
 
 /* ── Double border windowed look ────────────── */
@@ -67,28 +67,28 @@
   box-shadow:
     0 0 0 2px var(--px-frame-shadow),
     0 0 0 4px var(--px-frame-mid),
-    0 0 0 6px var(--px-frame-shadow);
+    0 0 0 6px var(--px-frame-shadow) !important;
 }
 
 /* ── Active / clicked states ────────────────── */
 .px-shadow-4:active {
   box-shadow:
     inset  2px  2px 0 0 var(--px-frame-shadow),
-    inset -2px -2px 0 0 var(--px-frame-light);
+    inset -2px -2px 0 0 var(--px-frame-light) !important;
   transform: translate(2px, 2px);
 }
 
 /* ── Color-keyed neon shadows ───────────────── */
-.px-shadow-neon-pink   { box-shadow: 4px 4px 0 0 var(--px-neon-pink),   0 0 0 2px var(--px-neon-pink); }
-.px-shadow-neon-cyan   { box-shadow: 4px 4px 0 0 var(--px-neon-cyan),   0 0 0 2px var(--px-neon-cyan); }
-.px-shadow-neon-green  { box-shadow: 4px 4px 0 0 var(--px-neon-green),  0 0 0 2px var(--px-neon-green); }
-.px-shadow-neon-yellow { box-shadow: 4px 4px 0 0 var(--px-neon-yellow), 0 0 0 2px var(--px-neon-yellow); }
-.px-shadow-nes-red     { box-shadow: 4px 4px 0 0 var(--px-nes-red),     0 0 0 2px var(--px-nes-red); }
-.px-shadow-nes-blue    { box-shadow: 4px 4px 0 0 var(--px-nes-blue),    0 0 0 2px var(--px-nes-blue); }
+.px-shadow-neon-pink   { box-shadow: 4px 4px 0 0 var(--px-neon-pink),   0 0 0 2px var(--px-neon-pink) !important; }
+.px-shadow-neon-cyan   { box-shadow: 4px 4px 0 0 var(--px-neon-cyan),   0 0 0 2px var(--px-neon-cyan) !important; }
+.px-shadow-neon-green  { box-shadow: 4px 4px 0 0 var(--px-neon-green),  0 0 0 2px var(--px-neon-green) !important; }
+.px-shadow-neon-yellow { box-shadow: 4px 4px 0 0 var(--px-neon-yellow), 0 0 0 2px var(--px-neon-yellow) !important; }
+.px-shadow-nes-red     { box-shadow: 4px 4px 0 0 var(--px-nes-red),     0 0 0 2px var(--px-nes-red) !important; }
+.px-shadow-nes-blue    { box-shadow: 4px 4px 0 0 var(--px-nes-blue),    0 0 0 2px var(--px-nes-blue) !important; }
 
 /* ── Legacy PIXELART.CSS .shadow-N aliases ──────── */
-.shadow-1 { box-shadow: 2px 2px 0 0 rgba(0,0,0,0.8); }
-.shadow-2 { box-shadow: 4px 4px 0 0 rgba(0,0,0,0.8); }
-.shadow-3 { box-shadow: inset 2px 2px 0 0 rgba(255,255,255,.5), inset -2px -2px 0 0 rgba(0,0,0,.8); }
-.shadow-4 { box-shadow: 4px 4px 0 0 rgba(0,0,0,1); }
-.shadow-5 { box-shadow: 8px 8px 0 0 rgba(0,0,0,1); }
+.shadow-1 { box-shadow: 2px 2px 0 0 rgba(0,0,0,0.8) !important; }
+.shadow-2 { box-shadow: 4px 4px 0 0 rgba(0,0,0,0.8) !important; }
+.shadow-3 { box-shadow: inset 2px 2px 0 0 rgba(255,255,255,.5), inset -2px -2px 0 0 rgba(0,0,0,.8) !important; }
+.shadow-4 { box-shadow: 4px 4px 0 0 rgba(0,0,0,1) !important; }
+.shadow-5 { box-shadow: 8px 8px 0 0 rgba(0,0,0,1) !important; }

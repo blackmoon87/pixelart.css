@@ -55,10 +55,10 @@
 code, .code {
   font-family: 'Share Tech Mono', 'Courier New', Consolas, monospace;
   font-size: 0.875em;
-  background: var(--px-dark-gray);
-  color: var(--px-neon-green);
+  background: var(--px-dark-gray) !important;
+  color: var(--px-neon-green) !important;
   padding: 2px 4px;
-  border: 2px solid var(--px-frame-shadow);
+  border: 2px solid var(--px-frame-shadow) !important;
 }
 
 /* ── System mono ────────────────────────────── */

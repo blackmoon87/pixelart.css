@@ -54,8 +54,8 @@
 .px-glow:focus {
   box-shadow:
     0 0 0 2px var(--px-neon-cyan),
-    0 0 0 4px var(--px-neon-purple);
-  color: var(--px-neon-cyan);
+    0 0 0 4px var(--px-neon-purple) !important;
+  color: var(--px-neon-cyan) !important;
 }
 
 /* ── Dim (opacity snap, no ease) ────────────── */
@@ -89,7 +89,7 @@
 /* ── Shadow hover (pixel snap) ──────────────── */
 .shadow-hover { cursor: pointer; position: relative; }
 .shadow-hover:hover {
-  box-shadow: 4px 4px 0 0 var(--px-frame-shadow);
+  box-shadow: 4px 4px 0 0 var(--px-frame-shadow) !important;
 }
 
 /* ── Pixel scan-line hover overlay ──────────── */
@@ -101,7 +101,7 @@
     to bottom,
     transparent 0px, transparent 1px,
     rgba(0,0,0,0.25) 1px, rgba(0,0,0,0.25) 2px
-  );
+  ) !important;
   pointer-events: none;
   opacity: 0;
 }

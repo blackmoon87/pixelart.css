@@ -10,17 +10,17 @@
 */
 
 /* Zero radius — the pixel art standard */
-.br0 { border-radius: 0; }
-.br1 { border-radius: 0; }
-.br2 { border-radius: 0; }
-.br3 { border-radius: 0; }
-.br4 { border-radius: 0; }
+.br0 { border-radius: 0 !important; }
+.br1 { border-radius: 0 !important; }
+.br2 { border-radius: 0 !important; }
+.br3 { border-radius: 0 !important; }
+.br4 { border-radius: 0 !important; }
 
 /* Force-override any radius */
 .px-sharp  { border-radius: 0 !important; }
 
 /* "Pill" in pixel art = just very wide — still sharp */
-.br-pill   { border-radius: 0; }
+.br-pill   { border-radius: 0 !important; }
 
 /* Specific corners only — useful for pixel-art panel tabs */
 .br--bottom { border-top-left-radius: 0; border-top-right-radius: 0; }
@@ -48,28 +48,28 @@
 
 /* Responsive aliases */
 @media (--breakpoint-not-small) {
-  .br0-ns { border-radius: 0; }
-  .br1-ns { border-radius: 0; }
-  .br2-ns { border-radius: 0; }
-  .br3-ns { border-radius: 0; }
-  .br4-ns { border-radius: 0; }
-  .br-pill-ns { border-radius: 0; }
+  .br0-ns { border-radius: 0 !important; }
+  .br1-ns { border-radius: 0 !important; }
+  .br2-ns { border-radius: 0 !important; }
+  .br3-ns { border-radius: 0 !important; }
+  .br4-ns { border-radius: 0 !important; }
+  .br-pill-ns { border-radius: 0 !important; }
 }
 
 @media (--breakpoint-medium) {
-  .br0-m { border-radius: 0; }
-  .br1-m { border-radius: 0; }
-  .br2-m { border-radius: 0; }
-  .br3-m { border-radius: 0; }
-  .br4-m { border-radius: 0; }
-  .br-pill-m { border-radius: 0; }
+  .br0-m { border-radius: 0 !important; }
+  .br1-m { border-radius: 0 !important; }
+  .br2-m { border-radius: 0 !important; }
+  .br3-m { border-radius: 0 !important; }
+  .br4-m { border-radius: 0 !important; }
+  .br-pill-m { border-radius: 0 !important; }
 }
 
 @media (--breakpoint-large) {
-  .br0-l { border-radius: 0; }
-  .br1-l { border-radius: 0; }
-  .br2-l { border-radius: 0; }
-  .br3-l { border-radius: 0; }
-  .br4-l { border-radius: 0; }
-  .br-pill-l { border-radius: 0; }
+  .br0-l { border-radius: 0 !important; }
+  .br1-l { border-radius: 0 !important; }
+  .br2-l { border-radius: 0 !important; }
+  .br3-l { border-radius: 0 !important; }
+  .br4-l { border-radius: 0 !important; }
+  .br-pill-l { border-radius: 0 !important; }
 }

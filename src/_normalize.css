@@ -66,7 +66,7 @@ pre {
  */
 
 a {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 /**
@@ -75,7 +75,7 @@ a {
  */
 
 abbr[title] {
-  border-bottom: none; /* 1 */
+  border-bottom: none !important; /* 1 */
   text-decoration: underline; /* 2 */
   text-decoration: underline dotted; /* 2 */
 }
@@ -231,7 +231,7 @@ fieldset {
 
 legend {
   box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
+  color: inherit !important; /* 2 */
   display: table; /* 1 */
   max-width: 100%; /* 1 */
   padding: 0; /* 3 */
@@ -357,18 +357,18 @@ html {
 
 /* Pixel-art selection highlight */
 ::selection {
-  background: var(--px-nes-blue, #0000fc);
-  color: var(--px-white, #ffffff);
+  background: var(--px-nes-blue, #0000fc) !important;
+  color: var(--px-white, #ffffff) !important;
 }
 
 /* Pixel scrollbar (webkit) */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--px-near-black, #1a1a2e); }
+::-webkit-scrollbar-track { background: var(--px-near-black, #1a1a2e) !important; }
 ::-webkit-scrollbar-thumb {
-  background: var(--px-mid-gray, #4a4a6a);
-  border: 2px solid var(--px-near-black, #1a1a2e);
+  background: var(--px-mid-gray, #4a4a6a) !important;
+  border: 2px solid var(--px-near-black, #1a1a2e) !important;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--px-neon-cyan, #00f5ff); }
+::-webkit-scrollbar-thumb:hover { background: var(--px-neon-cyan, #00f5ff) !important; }
 
 /* Remove all transitions globally for true pixel snap feel */
 /* (Uncomment to enforce — breaks .px-glow intentionally soft styles)
