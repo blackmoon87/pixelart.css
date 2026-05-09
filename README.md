@@ -101,22 +101,22 @@ npm run build
 
 ## 🪄 Magic Mode (Zero-Code)
 
-Want to pixelate your site without writing classes? Include our **Magic Script** and add `data-pixelart="true"` to your `<body>` or any container:
+Want to pixelate your site without writing classes? Just include our **Magic Script** at the bottom of your page! It will automatically transform the entire `<body>` into Pixel Art.
 
 ```html
-<!-- 1. Add the attribute -->
-<body data-pixelart="true">
-
-  <!-- 2. Standard HTML automatically transforms into Pixel Art! -->
+<body>
+  <!-- Standard HTML automatically transforms into Pixel Art! -->
   <button>Click Me</button>
   <progress value="50" max="100"></progress>
   <h1>Title</h1>
   <input type="text" placeholder="Type...">
   
-  <!-- 3. Include the magic script -->
+  <!-- Include the magic script -->
   <script src="https://raw.githubusercontent.com/blackmoon87/pixelart.css/main/js/pixelart-magic.js"></script>
 </body>
 ```
+
+*(Note: If you only want the magic applied to a specific section, simply add `data-pixelart="true"` to that container `<div>`. The script is smart and will only target that area!)*
 
 ---
 

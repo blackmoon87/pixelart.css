@@ -106,8 +106,17 @@
     },
     
     init: function() {
-      const magicContainers = document.querySelectorAll('[data-pixelart="true"]');
-      if (magicContainers.length === 0) return;
+      let magicContainers = document.querySelectorAll('[data-pixelart="true"]');
+      
+      // If no specific containers are marked, assume the user wants it globally on the body
+      // (because they included the magic script!).
+      if (magicContainers.length === 0) {
+        if (document.body && document.body.getAttribute('data-pixelart') !== 'false') {
+          magicContainers = [document.body];
+        } else {
+          return;
+        }
+      }
       
       console.log('[PixelArt CSS] 🪄 Magic mode activated. Transforming elements...');
       magicContainers.forEach(container => window.PixelArtMagic.apply(container));
