@@ -131,6 +131,15 @@ The framework defaults to a Dark Arcade aesthetic. You can instantly switch your
 </html>
 ```
 
+### Game Boy Theme (Classic Green)
+We also included a built-in 4-color Game Boy palette to demonstrate the power of CSS variables.
+
+```html
+<html data-theme="gameboy">
+  <!-- Everything turns into classic retro green! -->
+</html>
+```
+
 ### Custom Variables
 You can easily customize the core colors and borders of the framework by overriding CSS Custom Properties (`:root` variables) in your own stylesheet:
 

@@ -28,19 +28,38 @@
 
 <div style="display:flex; justify-content:space-between; align-items:center;">
   <h1>PIXELART-CSS</h1>
-  <button id="theme-toggle" class="px-btn px-btn-neon" style="font-size:12px;">☀️ LIGHT THEME</button>
+  <div style="display:flex; gap:16px;">
+    <button id="theme-gameboy" class="px-btn px-btn-success" style="font-size:12px;">🟩 GAME BOY</button>
+    <button id="theme-toggle" class="px-btn px-btn-neon" style="font-size:12px;">☀️ LIGHT THEME</button>
+  </div>
 </div>
 <p class="subtitle">► npm install @blue87moon/pixelart-css ◄</p>
 
 <script>
-  document.getElementById('theme-toggle').addEventListener('click', function() {
+  const btnLight = document.getElementById('theme-toggle');
+  const btnGB = document.getElementById('theme-gameboy');
+
+  btnLight.addEventListener('click', function() {
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
     if (isLight) {
       document.documentElement.removeAttribute('data-theme');
-      this.innerHTML = '☀️ LIGHT THEME';
+      btnLight.innerHTML = '☀️ LIGHT THEME';
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
-      this.innerHTML = '🌙 DARK THEME';
+      btnLight.innerHTML = '🌙 DARK THEME';
+      btnGB.innerHTML = '🟩 GAME BOY'; // reset GB button
+    }
+  });
+
+  btnGB.addEventListener('click', function() {
+    const isGB = document.documentElement.getAttribute('data-theme') === 'gameboy';
+    if (isGB) {
+      document.documentElement.removeAttribute('data-theme');
+      btnGB.innerHTML = '🟩 GAME BOY';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'gameboy');
+      btnGB.innerHTML = '⬛ DARK THEME';
+      btnLight.innerHTML = '☀️ LIGHT THEME'; // reset Light button
     }
   });
 </script>

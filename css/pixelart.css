@@ -5519,6 +5519,41 @@ code, .code {
   --px-frame-light:  rgba(255, 255, 255, 0.8);
   --px-frame-dark:   rgba(0, 0, 0, 0.3);
 }
+/* ── Game Boy Theme (Classic 4-Color Green) ───── */
+[data-theme="gameboy"] {
+  /* Grayscale mapped to GB greens */
+  --px-black:        #0f380f;
+  --px-near-black:   #0f380f;
+  --px-dark-gray:    #306230;
+  --px-mid-gray:     #306230;
+  --px-gray:         #8bac0f;
+  --px-silver:       #8bac0f;
+  --px-light-silver: #9bbc0f;
+  --px-moon-gray:    #9bbc0f;
+  --px-light-gray:   #9bbc0f;
+  --px-near-white:   #9bbc0f;
+  --px-white:        #9bbc0f;
+
+  /* Overwrite all NES & Neon colors to force monochrome! */
+  --px-nes-black:    #0f380f;
+  --px-nes-white:    #9bbc0f;
+  --px-nes-red:      #306230;
+  --px-nes-green:    #8bac0f;
+  --px-nes-blue:     #306230;
+  --px-nes-yellow:   #8bac0f;
+  
+  --px-neon-pink:    #9bbc0f;
+  --px-neon-cyan:    #9bbc0f;
+  --px-neon-purple:  #8bac0f;
+  --px-neon-yellow:  #9bbc0f;
+  --px-neon-green:   #9bbc0f;
+  --px-neon-orange:  #8bac0f;
+
+  /* Frames */
+  --px-frame-shadow: #0f380f;
+  --px-frame-light:  #9bbc0f;
+  --px-frame-dark:   #306230;
+}
 /*
 
   CUSTOM MEDIA QUERIES
