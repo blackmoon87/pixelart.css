@@ -57,6 +57,36 @@
         selector: 'input[type="checkbox"]:not([class*="px-checkbox"])',
         classes: ['px-checkbox']
       },
+      // Radio -> .px-radio
+      {
+        selector: 'input[type="radio"]:not([class*="px-radio"])',
+        classes: ['px-radio']
+      },
+      // Links -> .px-link
+      {
+        selector: 'a:not([class*="px-link"]):not([class*="px-btn"])',
+        classes: ['px-link']
+      },
+      // Lists -> .px-list
+      {
+        selector: 'ul:not([class*="px-list"]), ol:not([class*="px-list"])',
+        classes: ['px-list']
+      },
+      // Blockquotes -> .px-blockquote
+      {
+        selector: 'blockquote:not([class*="px-blockquote"])',
+        classes: ['px-blockquote']
+      },
+      // KBD -> .px-kbd
+      {
+        selector: 'kbd:not([class*="px-kbd"])',
+        classes: ['px-kbd']
+      },
+      // Images -> .px-render
+      {
+        selector: 'img:not([class*="px-render"]):not([class*="px-sprite"])',
+        classes: ['px-render']
+      },
       // "card" class -> .px-card
       {
         selector: '.card:not([class*="px-card"])',

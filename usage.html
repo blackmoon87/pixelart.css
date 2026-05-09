@@ -250,24 +250,55 @@
 &lt;div class="px-sprite px-sprite-lg"&gt;32px&lt;/div&gt;
 &lt;div class="px-sprite px-sprite-xl"&gt;64px&lt;/div&gt;</pre>
 
-<!-- 13 FORMS -->
-<h2>// 13. PIXEL FORMS</h2>
-<div style="display:flex;flex-direction:column;gap:16px;max-width:320px">
-  <input type="text" class="px-input" placeholder="USERNAME">
-  <input type="password" class="px-input" placeholder="PASSWORD">
-  <select class="px-select">
-    <option>WARRIOR</option>
-    <option>MAGE</option>
-    <option>ROGUE</option>
-  </select>
-  <label style="display:flex;align-items:center;font-size:12px;color:#9090b0;cursor:pointer">
-    <input type="checkbox" class="px-checkbox" checked>
-    SAVE GAME DATA
-  </label>
+<!-- 13 FORMS & ELEMENTS -->
+<h2>// 13. PIXEL FORMS & ELEMENTS</h2>
+<div style="display:flex;gap:32px;flex-wrap:wrap">
+  <!-- Left Col: Forms -->
+  <div style="display:flex;flex-direction:column;gap:16px;min-width:240px">
+    <input type="text" class="px-input" placeholder="USERNAME">
+    <select class="px-select">
+      <option>WARRIOR</option>
+      <option>MAGE</option>
+    </select>
+    <label style="display:flex;align-items:center;font-size:12px;color:#9090b0;cursor:pointer">
+      <input type="checkbox" class="px-checkbox" checked> SAVE DATA
+    </label>
+    <label style="display:flex;align-items:center;font-size:12px;color:#9090b0;cursor:pointer">
+      <input type="radio" class="px-radio" name="r1" checked> OPTION A
+    </label>
+    <label style="display:flex;align-items:center;font-size:12px;color:#9090b0;cursor:pointer">
+      <input type="radio" class="px-radio" name="r1"> OPTION B
+    </label>
+  </div>
+  
+  <!-- Right Col: Elements -->
+  <div style="display:flex;flex-direction:column;gap:16px;flex:1">
+    <div>
+      <span class="label">px-link</span>
+      <a href="#" class="px-link">READ MORE_</a>
+    </div>
+    <div>
+      <span class="label">px-kbd</span>
+      <p style="font-size:12px;color:#9090b0">Press <kbd class="px-kbd">ESC</kbd> to exit</p>
+    </div>
+    <div>
+      <span class="label">px-list</span>
+      <ul class="px-list" style="font-size:12px;color:#9090b0;margin:0">
+        <li>First item</li>
+        <li>Second item</li>
+      </ul>
+    </div>
+    <div>
+      <span class="label">px-blockquote</span>
+      <blockquote class="px-blockquote" style="margin:0">It's dangerous to go alone!</blockquote>
+    </div>
+  </div>
 </div>
-<pre>&lt;input type="text" class="px-input" placeholder="TEXT"&gt;
-&lt;select class="px-select"&gt;...&lt;/select&gt;
-&lt;input type="checkbox" class="px-checkbox"&gt;</pre>
+<pre>&lt;input type="radio" class="px-radio"&gt;
+&lt;a href="#" class="px-link"&gt;LINK&lt;/a&gt;
+&lt;kbd class="px-kbd"&gt;ESC&lt;/kbd&gt;
+&lt;ul class="px-list"&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;
+&lt;blockquote class="px-blockquote"&gt;Quote&lt;/blockquote&gt;</pre>
 
 <!-- 14 CARDS -->
 <h2>// 14. PIXEL CARDS</h2>

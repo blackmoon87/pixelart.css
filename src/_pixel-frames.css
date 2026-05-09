@@ -731,3 +731,110 @@
   font-family: 'Press Start 2P', monospace;
   font-size: 10px;
 }
+
+/* ═══════════════════════════════════════════════
+   MORE HTML ELEMENTS (RADIOS, LISTS, QUOTES, KBD, LINKS)
+   ═══════════════════════════════════════════════ */
+
+/* Pixel Radio Button */
+.px-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--px-near-black);
+  border: 3px solid var(--px-frame-shadow);
+  box-shadow: inset 2px 2px 0 0 var(--px-black);
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  outline: none;
+  margin-right: 8px;
+}
+.px-radio:checked {
+  border-color: var(--px-neon-cyan);
+}
+.px-radio:checked::after {
+  content: '■';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--px-neon-cyan);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
+
+/* Pixel List */
+.px-list {
+  list-style: none;
+  padding-left: 24px;
+  margin: 16px 0;
+}
+.px-list li {
+  position: relative;
+  margin-bottom: 8px;
+}
+.px-list li::before {
+  content: '►';
+  position: absolute;
+  left: -20px;
+  top: 2px;
+  color: var(--px-neon-cyan);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+}
+
+/* Pixel Blockquote */
+.px-blockquote {
+  margin: 16px 0;
+  padding: 16px 24px;
+  background: var(--px-dark-gray);
+  border-left: 6px solid var(--px-neon-purple);
+  box-shadow: 4px 4px 0 0 var(--px-frame-shadow);
+  color: var(--px-light-silver);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 16px;
+  font-style: normal; /* Override default italic */
+}
+.px-blockquote::before {
+  content: '"';
+  color: var(--px-neon-cyan);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 24px;
+  line-height: 0;
+  margin-right: 8px;
+  vertical-align: -8px;
+}
+
+/* Pixel Keyboard Key (KBD) */
+.px-kbd {
+  display: inline-block;
+  padding: 4px 8px;
+  background: var(--px-near-black);
+  color: var(--px-white);
+  border: 2px solid var(--px-frame-shadow);
+  box-shadow: 
+    inset 2px 2px 0 0 var(--px-frame-light),
+    inset -2px -2px 0 0 var(--px-frame-dark),
+    0 4px 0 0 var(--px-frame-shadow);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  margin: 0 4px;
+  position: relative;
+  top: -2px;
+  border-radius: 0;
+}
+
+/* Pixel Link */
+.px-link {
+  color: var(--px-neon-cyan);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.px-link:hover {
+  color: var(--px-neon-pink);
+  border-bottom-color: var(--px-neon-pink);
+  background: var(--px-near-black);
+}
