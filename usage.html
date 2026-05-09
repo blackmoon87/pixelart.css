@@ -250,15 +250,104 @@
 &lt;div class="px-sprite px-sprite-lg"&gt;32px&lt;/div&gt;
 &lt;div class="px-sprite px-sprite-xl"&gt;64px&lt;/div&gt;</pre>
 
+<!-- 13 CARDS -->
+<h2>// 13. PIXEL CARDS</h2>
+<div class="demo-row">
+  <div class="demo-col">
+    <span class="label">Default</span>
+    <div class="px-card">
+      <div class="px-card-header">ITEM.DAT</div>
+      <div class="px-card-body" style="font-size:12px;color:#9090b0">Card body content here. Use for panels, items, inventory slots.</div>
+      <div class="px-card-footer" style="font-size:11px;color:#6b6b8e">Footer info</div>
+    </div>
+    <pre>&lt;div class="px-card"&gt;
+  &lt;div class="px-card-header"&gt;TITLE&lt;/div&gt;
+  &lt;div class="px-card-body"&gt;...&lt;/div&gt;
+  &lt;div class="px-card-footer"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+  <div class="demo-col">
+    <span class="label">Neon variant</span>
+    <div class="px-card px-card-neon">
+      <div class="px-card-header">NEON.EXE</div>
+      <div class="px-card-body" style="font-size:12px;color:#9090b0">Synthwave neon styled card.</div>
+      <div class="px-card-footer" style="font-size:11px;color:#6b6b8e">v1.0.1</div>
+    </div>
+    <pre>&lt;div class="px-card px-card-neon"&gt;...&lt;/div&gt;</pre>
+  </div>
+  <div class="demo-col">
+    <span class="label">Game Boy variant</span>
+    <div class="px-card px-card-gb">
+      <div class="px-card-header">POCKET.GB</div>
+      <div class="px-card-body" style="font-family:'Press Start 2P',monospace;font-size:7px;color:#0f380f;line-height:2">LEVEL 01<br>HP ████░<br>MP ██░░░</div>
+    </div>
+    <pre>&lt;div class="px-card px-card-gb"&gt;...&lt;/div&gt;</pre>
+  </div>
+</div>
+
+<!-- 14 TABS -->
+<h2>// 14. PIXEL TABS</h2>
+<div style="max-width:480px">
+  <div class="px-tabs" id="demo-tabs">
+    <button class="px-tab active" onclick="switchTab(event,'t1')">STATS</button>
+    <button class="px-tab" onclick="switchTab(event,'t2')">ITEMS</button>
+    <button class="px-tab" onclick="switchTab(event,'t3')">MAP</button>
+  </div>
+  <div class="px-tab-panel active" id="t1" style="font-size:12px;color:#9090b0">
+    HP: 100 / 100<br>MP: 45 / 80<br>EXP: 1240 / 2000
+  </div>
+  <div class="px-tab-panel" id="t2" style="font-size:12px;color:#9090b0">
+    🗡 Iron Sword ×1<br>🛡 Leather Shield ×1<br>🧪 Potion ×5
+  </div>
+  <div class="px-tab-panel" id="t3" style="font-family:'VT323',monospace;font-size:20px;color:#39ff14">
+    ░░▓▓░░░<br>░▓██▓▓░<br>░░▓▓▓░░<br>░░░▓░░░
+  </div>
+</div>
+<script>
+function switchTab(e,id){
+  document.querySelectorAll('#demo-tabs .px-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.px-tab-panel').forEach(p=>p.classList.remove('active'));
+  e.target.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+</script>
+<pre>&lt;div class="px-tabs"&gt;
+  &lt;button class="px-tab active"&gt;TAB 1&lt;/button&gt;
+  &lt;button class="px-tab"&gt;TAB 2&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="px-tab-panel active"&gt;Panel 1&lt;/div&gt;
+&lt;div class="px-tab-panel"&gt;Panel 2&lt;/div&gt;</pre>
+
+<!-- 15 BORDERS -->
+<h2>// 15. PIXEL BORDERS</h2>
+<div style="display:flex;flex-direction:column;gap:12px;max-width:480px">
+  <div class="px-border" style="padding:10px;font-size:11px">.px-border — default</div>
+  <div class="px-border-neon" style="padding:10px;font-size:11px;color:#00f5ff">.px-border-neon — cyan</div>
+  <div class="px-border-pink" style="padding:10px;font-size:11px;color:#ff2d78">.px-border-pink</div>
+  <div class="px-border-gold" style="padding:10px;font-size:11px;color:#ffe600">.px-border-gold</div>
+  <div class="px-border-green" style="padding:10px;font-size:11px;color:#39ff14">.px-border-green</div>
+  <div class="px-border-double" style="padding:10px;font-size:11px">.px-border-double</div>
+  <div class="px-border-double-neon" style="padding:10px;font-size:11px;color:#00f5ff">.px-border-double-neon</div>
+  <div class="px-border-dashed-neon" style="padding:10px;font-size:11px;color:#00f5ff">.px-border-dashed-neon</div>
+</div>
+<pre>&lt;div class="px-border"&gt;default&lt;/div&gt;
+&lt;div class="px-border-neon"&gt;cyan&lt;/div&gt;
+&lt;div class="px-border-double"&gt;double&lt;/div&gt;
+&lt;div class="px-border-double-neon"&gt;double neon&lt;/div&gt;
+&lt;div class="px-border-dashed-neon"&gt;dashed neon&lt;/div&gt;
+&lt;div class="px-border-top"&gt;top only&lt;/div&gt;</pre>
+
 <!-- FOOTER -->
 <footer style="text-align:center;margin-top:64px;padding-top:32px;border-top:2px solid #2d2d44">
   <p style="font-size:11px;color:#4a4a6a">
     @blue87moon/pixelart-css — MIT License<br>
     <a href="https://github.com/blackmoon87/pixelart.css" style="color:#00f5ff">github.com/blackmoon87/pixelart.css</a> ·
-    <a href="https://www.npmjs.com/package/@blue87moon/pixelart-css" style="color:#ff2d78">npmjs.com</a>
+    <a href="https://www.npmjs.com/package/@blue87moon/pixelart-css" style="color:#ff2d78">npmjs.com</a> ·
+    <a href="https://buymeacoffee.com/black.moon" style="color:#ffe600">☕ buy me a coffee</a>
   </p>
   <p class="px-blink" style="font-family:'Press Start 2P',monospace;font-size:7px;color:#6b6b8e;margin-top:16px">INSERT COIN TO CONTINUE</p>
 </footer>
 
 </body>
 </html>
+
