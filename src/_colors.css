@@ -103,3 +103,23 @@
   --px-32: 32px;
   --px-64: 64px;
 }
+
+/* ── Light Theme (Retro IBM Beige) ───────────── */
+[data-theme="light"] {
+  --px-black:        #ffffff; /* Main text is now black (inverted) */
+  --px-near-black:   #f4f4f0; /* Main background becomes retro off-white */
+  --px-dark-gray:    #dfdfd6; /* Slightly darker beige for cards/windows */
+  --px-mid-gray:     #c5c5bb;
+  --px-gray:         #9e9e90;
+  --px-silver:       #6b6b8e; /* Keep readable */
+  --px-light-silver: #4a4a6a;
+  --px-moon-gray:    #2d2d44;
+  --px-light-gray:   #1a1a2e;
+  --px-near-white:   #0d0d0d;
+  --px-white:        #000000; /* Main inverted text/borders */
+
+  /* Frame shadow is slightly lighter than black to keep it crisp */
+  --px-frame-shadow: #222222;
+  --px-frame-light:  rgba(255, 255, 255, 0.8);
+  --px-frame-dark:   rgba(0, 0, 0, 0.3);
+}

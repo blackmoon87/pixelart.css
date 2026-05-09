@@ -122,6 +122,16 @@ Want to pixelate your site without writing classes? Include our **Magic Script**
 
 ## 🎨 Theming & Customization
 
+### Light Theme (Retro Beige)
+The framework defaults to a Dark Arcade aesthetic. You can instantly switch your entire page to a Retro Light Theme (IBM Beige style) by adding `data-theme="light"` to your `<html>` or `<body>` tag.
+
+```html
+<html data-theme="light">
+  <!-- All pixel frames, inputs, and text will invert perfectly! -->
+</html>
+```
+
+### Custom Variables
 You can easily customize the core colors and borders of the framework by overriding CSS Custom Properties (`:root` variables) in your own stylesheet:
 
 ```css
